@@ -6,9 +6,10 @@ import {
   FolderGit2, 
   TerminalSquare, 
   BookOpen, 
-  Mail
+  Briefcase
 } from "lucide-react";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
+import Image from "next/image";
 
 const GithubIcon = ({ size = 24, className = "" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -26,11 +27,12 @@ const LinkedinIcon = ({ size = 24, className = "" }) => (
 );
 
 const navItems = [
-  { name: "Overview", id: "overview", icon: LayoutDashboard },
+  { name: "About Me", id: "overview", icon: LayoutDashboard },
+  { name: "Experience", id: "experience", icon: Briefcase },
   { name: "Projects", id: "projects", icon: FolderGit2 },
-  { name: "Playground", id: "playground", icon: TerminalSquare },
-  { name: "Story", id: "story", icon: BookOpen },
-  { name: "Contact", id: "contact", icon: Mail },
+  { name: "Skills", id: "playground", icon: TerminalSquare },
+  { name: "Education", id: "education", icon: BookOpen },
+  { name: "My Journey", id: "story", icon: BookOpen },
 ];
 
 export default function Sidebar() {
@@ -48,8 +50,8 @@ export default function Sidebar() {
     <aside className="w-64 bg-zinc-900/50 border-r border-zinc-800 flex-col justify-between hidden md:flex backdrop-blur-xl h-screen sticky top-0">
       <div className="p-6">
         <div className="flex items-center gap-4 mb-10">
-          <div className="h-12 w-12 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center font-bold text-lg shadow-lg">
-            NV
+          <div className="h-12 w-12  rounded-full overflow-hidden items-center justify-center">
+            <Image src="/ndv.png" width={70} height={70} alt="author" className=" rounded-full"/>
           </div>
           <div>
             <h2 className="font-semibold text-zinc-100">Nguyễn Đăng Việt</h2>
@@ -87,11 +89,21 @@ export default function Sidebar() {
       </div>
 
       <div className="p-6 border-t border-zinc-800/50">
-        <div className="flex justify-center gap-4 text-zinc-400">
+        <a 
+          href="/cv.pdf" 
+          download
+          className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg font-medium transition-colors text-sm"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Download CV
+        </a>
+        <div className="flex justify-center gap-4 text-zinc-400 mt-4">
           <a href="https://github.com/NguyenDangViet2005" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
             <GithubIcon size={20} />
           </a>
-          <a href="#" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
+          <a href="https://www.linkedin.com/in/%C4%91%C4%83ng-vi%E1%BB%87t-82a881292/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
             <LinkedinIcon size={20} />
           </a>
         </div>
