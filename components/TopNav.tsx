@@ -4,20 +4,21 @@ import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { Search, Moon, Sun, Bell } from "lucide-react";
 
 const sectionNames: Record<string, string> = {
-  overview: "Overview",
+  overview: "About Me",
+  experience: "Experience",
   projects: "Projects",
-  playground: "Playground",
-  story: "Story",
-  contact: "Contact"
+  playground: "Skills",
+  education: "Education",
+  story: "My Journey"
 };
 
 export default function TopNav() {
-  const activeId = useScrollSpy(["overview", "projects", "playground", "story", "contact"], 64);
+  const activeId = useScrollSpy(["overview", "experience", "projects", "playground", "education", "story"], 64);
   
-  const currentSection = activeId ? sectionNames[activeId] : "Overview";
+  const currentSection = activeId ? sectionNames[activeId] : "About Me";
 
   return (
-    <header className="h-16 border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-sm flex items-center justify-between px-6 sticky top-0 z-20">
+    <header className="h-16 border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-sm flex items-center justify-between px-6 sticky top-0 z-50">
       <div className="flex items-center gap-2 text-zinc-400 font-medium text-sm">
         <span>Workspace</span>
         <span>/</span>

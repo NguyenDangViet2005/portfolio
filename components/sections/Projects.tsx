@@ -1,82 +1,73 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Sparkles } from "lucide-react";
-import { SiGithub } from "react-icons/si";
+import { ExternalLink, Sparkles, User, Users } from "lucide-react";
+import Image from "next/image";
 
 const projects = [
   { 
     name: "IT-JOB", 
     category: "RECRUITMENT PLATFORM",
     desc: "IT recruitment website with smart search and application management system",
-    tech: ["Next.js", "NestJS", "PostgreSQL", "TailwindCSS"],
-    image: "/projects/itjob.jpg",
-    github: "https://github.com/NguyenDangViet2005",
-    demo: "https://itjob-demo.vercel.app"
+    tech: ["Next.js", "ExpressJs", "PostgreSQL", "TailwindCSS"],
+    image: "/projects/itjob.png",
+    demo: "https://it-job-ndv.vercel.app/",
+    type: "Personal Project"
   },
   { 
     name: "SmartPOS", 
     category: "RETAIL SYSTEM",
     desc: "Cloud-based point-of-sale system with real-time inventory management",
-    tech: ["React", "Express", "MongoDB", "Socket.io"],
-    image: "/projects/smartpos.jpg",
-    github: "https://github.com/NguyenDangViet2005",
-    demo: "https://smartpos-demo.vercel.app"
+    tech: ["Next.js", "ExpressJs", "MongoDB", "Socket.io"],
+    image: "/projects/smartpos.png",
+    demo: "https://smart-pos-roan.vercel.app/",
+    type: "Personal Project"
   },
   { 
     name: "Trello Clone", 
     category: "PROJECT MANAGEMENT",
     desc: "Task management app with drag & drop and real-time collaboration",
-    tech: ["Next.js", "Node.js", "MySQL", "DnD Kit"],
-    image: "/projects/trello.jpg",
-    github: "https://github.com/NguyenDangViet2005",
-    demo: "https://trello-clone-demo.vercel.app"
+    tech: ["React", "ExpressJs", "MongoDB", "DnD Kit"],
+    image: "/projects/trello.png",
+    demo: "https://trello-web-ivory.vercel.app/",
+    type: "Personal Project"
   },
   { 
-    name: "E-Commerce Platform", 
-    category: "ONLINE STORE",
-    desc: "Full-stack e-commerce with payment gateway and admin dashboard",
-    tech: ["Next.js", "NestJS", "PostgreSQL", "Stripe"],
-    image: "/projects/ecommerce.jpg",
-    github: "https://github.com/NguyenDangViet2005",
-    demo: "https://ecommerce-demo.vercel.app"
+    name: "ShopACVN", 
+    category: "GAME ACCOUNT SHOP",
+    desc: "A professional marketplace for Arena of Valor (AOV) game accounts with secure transactions.",
+    tech: ["Next.js", "NestJS", "PostgreSQL"],
+    image: "/projects/shopaccvn.png",
+    demo: "https://shopacvn.com/",
+    type: "Team Project"
   },
   { 
-    name: "Social Media Dashboard", 
-    category: "ANALYTICS TOOL",
-    desc: "Unified dashboard for managing multiple social media accounts",
-    tech: ["React", "Express", "MongoDB", "Chart.js"],
-    image: "/projects/social.jpg",
-    github: "https://github.com/NguyenDangViet2005",
-    demo: "https://social-dashboard-demo.vercel.app"
+    name: "Movie Tickets", 
+    category: "FRONTEND UI",
+    desc: "Modern frontend interface for booking movie, music, and concert tickets with seamless user flow.",
+    tech: ["React", "TailwindCSS"],
+    image: "/projects/movieticket.png",
+    demo: "https://movietickets-hvlt.vercel.app/",
+    type: "Team Project"
   },
   { 
-    name: "Learning Management System", 
-    category: "EDUCATION PLATFORM",
-    desc: "Online education platform with course management and video streaming",
-    tech: ["Next.js", "NestJS", "PostgreSQL", "AWS S3"],
-    image: "/projects/lms.jpg",
-    github: "https://github.com/NguyenDangViet2005",
-    demo: "https://lms-demo.vercel.app"
-  },
+    name: "Best Game Account", 
+    category: "GAME ACCOUNT SHOP",
+    desc: "A featured e-commerce platform dedicated to high-quality game account trading.",
+    tech: ["Next.js", "NestJS", "PostgreSQL"],
+    image: "/projects/bestgameaccount.png",
+    demo: "https://www.palyio.com/en",
+    type: "Team Project"
+  },    
   { 
-    name: "Real Estate Portal", 
-    category: "PROPERTY LISTING",
-    desc: "Modern real estate platform with advanced search and virtual tours",
-    tech: ["Next.js", "Express", "MongoDB", "Mapbox"],
-    image: "/projects/realestate.jpg",
-    github: "https://github.com/NguyenDangViet2005",
-    demo: "https://realestate-demo.vercel.app"
-  },
-  { 
-    name: "Healthcare Booking", 
-    category: "MEDICAL SYSTEM",
-    desc: "Medical appointment scheduling with telemedicine integration",
-    tech: ["React", "NestJS", "PostgreSQL", "WebRTC"],
-    image: "/projects/healthcare.jpg",
-    github: "https://github.com/NguyenDangViet2005",
-    demo: "https://healthcare-demo.vercel.app"
-  },
+    name: "Star Systemsable", 
+    category: "MANAGEMENT SYSTEM",
+    desc: "A gamified child management system using task creation and star rewards to encourage positive behavior.",
+    tech: ["Next.js", "ExpressJs", "MongoDB", "Mapbox"],
+    image: "/projects/startracker.png",
+    demo: "https://star.systemsable.app/en",
+    type: "Team Project"
+  }
 ];
 
 const container = {
@@ -102,7 +93,6 @@ export default function Projects() {
         className="space-y-4"
       >
         <h1 className="text-3xl font-bold tracking-tight text-white flex items-center gap-3">
-          <Sparkles className="text-indigo-400" />
           Featured Projects
         </h1>
         <p className="text-zinc-400 max-w-2xl text-lg">
@@ -115,80 +105,80 @@ export default function Projects() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-4"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-6"
       >
         {projects.map((project, i) => (
           <motion.div 
             key={i} 
             variants={item}
             whileHover={{ y: -8 }}
-            className="group relative h-[280px] overflow-hidden cursor-pointer"
+            className="group relative h-[320px] overflow-hidden rounded-md border border-zinc-800 cursor-pointer"
           >
-            {/* Background Image with Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/40 via-purple-900/40 to-zinc-900/60">
-              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30" />
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+               <Image 
+                src={project.image} 
+                alt={project.name} 
+                fill 
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+               />
+               {/* Dark Overlay */}
+               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-zinc-950/20 z-10" />
             </div>
 
             {/* Content Overlay */}
-            <div className="absolute inset-0 p-8 flex flex-col justify-between">
+            <div className="absolute inset-0 p-6 flex flex-col justify-between z-20">
               {/* Top Section */}
-              <div>
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-semibold text-indigo-300 tracking-wider">
-                    {project.category}
-                  </span>
-                  <ExternalLink className="w-3 h-3 text-indigo-400" />
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-bold text-indigo-400 tracking-wider uppercase px-2 py-0.5 bg-indigo-500/10 border border-indigo-500/20 rounded-sm">
+                      {project.category}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-zinc-400 bg-black/40 px-2 py-1 rounded-sm text-[10px] backdrop-blur-sm border border-white/5">
+                    {project.type === "Personal Project" ? <User size={10} /> : <Users size={10} />}
+                    {project.type}
+                  </div>
                 </div>
-                <h3 className="text-3xl font-bold text-white mb-3 group-hover:text-indigo-300 transition-colors">
+                
+                <h3 className="text-2xl font-bold text-white group-hover:text-indigo-900 transition-colors">
                   {project.name}
                 </h3>
-                <p className="text-zinc-300 text-sm leading-relaxed max-w-md">
+                <p className="text-zinc-300 text-xs leading-relaxed max-w-md line-clamp-2">
                   {project.desc}
                 </p>
               </div>
 
-              {/* Bottom Section - Tech Stack & Links */}
+              {/* Bottom Section */}
               <div className="space-y-4">
                 {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                   {project.tech.map((tech, idx) => (
                     <span 
                       key={idx} 
-                      className="text-xs px-3 py-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white"
+                      className="text-[10px] px-2 py-0.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-sm text-zinc-300"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* Links - Show on hover */}
-                <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 rounded-lg text-sm text-white transition-all"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <SiGithub className="w-4 h-4" />
-                    Code
-                  </a>
-                  <a
+                {/* Hover Demo Button */}
+                <div className="h-10">
+                   <a
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-indigo-500 hover:bg-indigo-600 backdrop-blur-md rounded-lg text-sm text-white transition-all"
+                    className="flex items-center justify-center gap-2 w-full py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-md text-xs font-semibold transition-all opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0"
                     onClick={(e) => e.stopPropagation()}
                   >
                     <ExternalLink className="w-4 h-4" />
-                    Demo
+                    Live Demo
                   </a>
                 </div>
               </div>
             </div>
-
-            {/* Hover Border Effect */}
-            <div className="absolute inset-0 border-2 border-transparent group-hover:border-indigo-500/50 transition-all duration-300" />
           </motion.div>
         ))}
       </motion.div>
@@ -197,22 +187,17 @@ export default function Projects() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border border-indigo-500/20  p-8 text-center"
+        className="bg-indigo-500/5 border border-indigo-500/10  p-8 text-center rounded-md"
       >
-        <p className="text-zinc-400 mb-4">
-          And many more projects in development... 🚀
+        <p className="text-zinc-400 text-sm mb-4">
+          And many more projects in development... 
         </p>
-        <a 
-          href="https://github.com/NguyenDangViet2005" 
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg font-medium transition-colors"
-        >
-          <SiGithub className="w-5 h-5" />
-          View All on GitHub
-        </a>
+        <div className="flex justify-center">
+            <div className="h-10 w-40 bg-zinc-900 border border-zinc-800 rounded-md flex items-center justify-center text-zinc-500 text-xs italic">
+                More projects coming soon
+            </div>
+        </div>
       </motion.div>
     </div>
   );
 }
-

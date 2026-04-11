@@ -50,8 +50,8 @@ export default function Sidebar() {
     <aside className="w-64 bg-zinc-900/50 border-r border-zinc-800 flex-col justify-between hidden md:flex backdrop-blur-xl h-screen sticky top-0">
       <div className="p-6">
         <div className="flex items-center gap-4 mb-10">
-          <div className="h-12 w-12  rounded-full overflow-hidden items-center justify-center">
-            <Image src="/ndv.png" width={70} height={70} alt="author" className=" rounded-full"/>
+          <div className="h-12 w-12 rounded-full border border-zinc-800 overflow-hidden items-center justify-center">
+            <Image src="/ndv.png" width={70} height={70} alt="author"/>
           </div>
           <div>
             <h2 className="font-semibold text-zinc-100">Nguyễn Đăng Việt</h2>
@@ -72,11 +72,11 @@ export default function Sidebar() {
                 {isActive && (
                   <motion.div
                     layoutId="sidebar-active"
-                    className="absolute inset-0 bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 rounded-lg -z-10"
+                    className="absolute inset-0 bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 rounded-md -z-10"
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
-                <div className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+                <div className={`flex items-center gap-3 px-4 py-3 rounded-md transition-colors ${
                   isActive ? "text-indigo-400" : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/50"
                 }`}>
                   <item.icon size={18} />
@@ -92,7 +92,7 @@ export default function Sidebar() {
         <a 
           href="/cv.pdf" 
           download
-          className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg font-medium transition-colors text-sm"
+          className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-indigo-500 hover:bg-indigo-600 text-white rounded-md font-medium transition-colors text-sm"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />

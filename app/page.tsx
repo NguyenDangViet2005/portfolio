@@ -98,15 +98,35 @@ export default function SinglePagePortfolio() {
             
             <section id="education" className="min-h-screen pt-24 -mt-24 pb-32">
               <div className="space-y-8">
-                <h1 className="text-3xl font-bold tracking-tight text-white">🎓 Education</h1>
-                <div className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8">
-                  <h3 className="text-2xl font-bold text-white mb-2">University of Technology and Education</h3>
-                  <p className="text-indigo-400 mb-4">2023 - 2027 • Computer Science</p>
-                  <p className="text-zinc-400 mb-4">GPA: 3.9/4.0</p>
-                  <div className="space-y-2">
-                    <p className="text-zinc-300">• Focus on Software Engineering and System Architecture</p>
-                    <p className="text-zinc-300">• Active participation in coding competitions and hackathons</p>
-                    <p className="text-zinc-300">• Member of Computer Science Club</p>
+                <h1 className="text-3xl font-bold tracking-tight text-white">Education</h1>
+                <div className="bg-zinc-900/50 border border-zinc-800 rounded-md p-8">
+                  <div className="flex items-start gap-5 mb-6">
+                    <div className="flex-shrink-0 w-20 h-20 flex items-center justify-center overflow-hidden p-1">
+                      <Image src="/ute.png" width={70} height={70} alt="UTE Logo" className="object-contain" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white mb-1">University of Technology and Education</h3>
+                      <p className="text-indigo-400 font-medium">2023 - 2027 • Computer Science</p>
+                      <p className="text-zinc-400 text-sm mt-1">GPA: 3.9/4.0</p>
+                    </div>
+                  </div>
+                  <div className="border-t border-zinc-800 pt-5 space-y-3">
+                    <p className="text-zinc-300 flex items-start gap-2">
+                      <span className="text-indigo-400 mt-1.5 w-1.5 h-1.5 rounded-sm bg-indigo-400 flex-shrink-0"></span>
+                      Focus on Software Engineering and System Architecture
+                    </p>
+                    <p className="text-zinc-300 flex items-start gap-2">
+                      <span className="text-indigo-400 mt-1.5 w-1.5 h-1.5 rounded-sm bg-indigo-400 flex-shrink-0"></span>
+                      Actively participated in school projects and course-based software development
+                    </p>
+                    <p className="text-zinc-300 flex items-start gap-2">
+                      <span className="text-indigo-400 mt-1.5 w-1.5 h-1.5 rounded-sm bg-indigo-400 flex-shrink-0"></span>
+                      Built fullstack applications as part of coursework and team-based assignments
+                    </p>
+                    <p className="text-zinc-300 flex items-start gap-2">
+                      <span className="text-indigo-400 mt-1.5 w-1.5 h-1.5 rounded-sm bg-indigo-400 flex-shrink-0"></span>
+                      Applied real-world problem solving through practical class projects
+                    </p>
                   </div>
                 </div>
               </div>

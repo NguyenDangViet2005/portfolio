@@ -12,7 +12,7 @@ const experiences = [
     current: true,
     description: "Delivering end-to-end web solutions for clients, managing full project lifecycle from requirements gathering to deployment and maintenance.",
     achievements: [
-      "Built 8+ full-stack applications using Next.js, React, and Node.js",
+      "Built 7+ full-stack applications using Next.js, React, and Node.js",
       "Implemented scalable architectures with PostgreSQL and MongoDB",
       "Achieved 95%+ client satisfaction through effective communication",
       "Reduced application load times by 40% through optimization techniques"
@@ -22,15 +22,13 @@ const experiences = [
   {
     title: "Student Developer",
     company: "University Projects",
-    location: "Ho Chi Minh City",
+    location: "Da Nang City",
     period: "2023 - 2025",
     current: false,
     description: "Developed various academic and personal projects while maintaining a 3.9/4.0 GPA, focusing on system design and full-stack development.",
     achievements: [
       "Led team projects in Software Engineering courses",
       "Built real-world applications solving actual business problems",
-      "Participated in coding competitions and hackathons",
-      "Mentored junior students in web development"
     ],
     tech: ["Java", "Spring Boot", "React", "MySQL", "Git"]
   }
@@ -59,7 +57,6 @@ export default function Experience() {
         className="space-y-4"
       >
         <h1 className="text-3xl font-bold tracking-tight text-white flex items-center gap-3">
-          <Briefcase className="text-indigo-400" />
           Work Experience
         </h1>
         <p className="text-zinc-400 max-w-2xl text-lg">
@@ -78,7 +75,7 @@ export default function Experience() {
           <motion.div
             key={i}
             variants={item}
-            className="relative bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 hover:border-indigo-500/50 transition-all"
+            className="relative bg-zinc-900/50 border border-zinc-800 rounded-md p-8 hover:border-indigo-500/50 transition-all"
           >
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
@@ -150,13 +147,13 @@ export default function Experience() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border border-indigo-500/20 rounded-2xl p-8 text-center"
+        className="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border border-indigo-500/20 rounded-md p-8 text-center"
       >
         <p className="text-zinc-300 mb-4">
           Looking for opportunities to contribute to innovative projects and grow as a developer.
         </p>
         <p className="text-indigo-400 font-medium">
-          Open to full-time positions and exciting collaborations! 🚀
+          Open to full-time positions and exciting collaborations! 
         </p>
       </motion.div>
     </div>
