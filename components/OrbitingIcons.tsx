@@ -23,7 +23,7 @@ export default function OrbitingIcons({
   reverse = false 
 }: OrbitingIconsProps) {
   return (
-    <div className="relative w-full h-[400px] flex items-center justify-center">
+    <div className="relative w-full h-[200px] flex items-center justify-center">
       {/* Center circle */}
       <div className="absolute w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 backdrop-blur-sm flex items-center justify-center z-20">
         <div className="text-center">

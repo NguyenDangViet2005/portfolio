@@ -1,20 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Nguyễn Đăng Việt | Fullstack Developer",
-  description: "Portfolio of Nguyễn Đăng Việt, a developer who builds real-world systems.",
+  title: "Porfolio | Nguyễn Đăng Việt",
+  description:
+    "Prisma is a creative studio collective for visionary filmmakers, artists, and storytellers.",
 };
 
 export default function RootLayout({
@@ -23,11 +13,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
-    >
-      <body className="min-h-full flex flex-col bg-zinc-950 text-white font-sans">{children}</body>
+    <html lang="en" className="h-full antialiased scroll-smooth">
+      <body className="min-h-full flex flex-col bg-black text-[#E1E0CC]">
+        {children}
+      </body>
     </html>
   );
 }
