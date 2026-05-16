@@ -2,7 +2,6 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import ShinyText from "@/components/ShinyText";
 
 type Segment = {
   text: string;
@@ -10,7 +9,7 @@ type Segment = {
 };
 
 const aboutText =
-  "I am Nguyen Dang Viet, an enthusiastic fullstack developer based in Da Nang City. Over the last few years I have delivered 7+ full-stack applications, maintained a 3.9/4.0 GPA, and focused on system architecture, performance, and secure engineering across Next.js, Node.js, and modern databases.";
+  "An enthusiastic fullstack developer based in Da Nang City. Over the last few years I have delivered 7+ full-stack applications, maintained a 3.9/4.0 GPA, and focused on system architecture, performance, and secure engineering across Next.js, Node.js, and modern databases.";
 
 function WordsPullUpMultiStyle({
   segments,
@@ -51,8 +50,8 @@ function WordsPullUpMultiStyle({
 
 export default function Hero() {
   return (
-    <section className="relative h-screen p-4 md:p-6">
-      <div className="relative h-full rounded-2xl md:rounded-[2rem] overflow-hidden">
+    <section className="relative h-screen">
+      <div className="relative h-full overflow-hidden">
         <video
           className="absolute inset-0 h-full w-full object-cover"
           autoPlay
@@ -71,7 +70,6 @@ export default function Hero() {
                 { label: "About", href: "#collective" },
                 { label: "Experience", href: "#programs" },
                 { label: "Projects", href: "#projects" },
-                { label: "Story", href: "#story" },
                 { label: "Contact", href: "#inquiries" },
               ].map((item) => (
                 <li key={item.label}>
@@ -92,9 +90,9 @@ export default function Hero() {
             <div className="max-w-5xl">
               <WordsPullUpMultiStyle
                 segments={[
-                  { text: "I am Nguyen Dang Viet,", className: "font-normal" },
+                  { text: "Hi there,", className: "font-normal" },
                   {
-                    text: "a fullstack developer.",
+                    text: "I am Nguyen Dang Viet.",
                     className: "font-serif italic text-primary",
                   },
                   

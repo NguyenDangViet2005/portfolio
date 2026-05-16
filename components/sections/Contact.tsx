@@ -5,8 +5,8 @@ import ShinyText from "@/components/ShinyText";
 
 export default function Contact() {
   return (
-    <section id="inquiries" className="bg-black px-6 pb-10">
-      <div className="mx-auto max-w-6xl rounded-3xl border border-white/10 bg-[#101010] px-6 py-12 sm:px-10 sm:py-14">
+    <section id="inquiries" className="bg-transparent px-6 pb-10">
+      <div className="mx-auto max-w-6xl rounded-3xl border border-sunset-300/20 bg-gradient-to-br from-sky-dark/50 to-sky-storm/40 backdrop-blur-sm px-6 py-12 sm:px-10 sm:py-14">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <p className="text-primary text-xs uppercase tracking-[0.3em]">Inquiries</p>

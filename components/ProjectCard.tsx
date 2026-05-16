@@ -36,10 +36,10 @@ export default function ProjectCard({
         delay,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="group relative overflow-hidden rounded-xl bg-[#0a0a0a] border border-white/5 hover:border-white/10 transition-all duration-300"
+      className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-sky-dark/40 to-sky-storm/30 border border-sunset-300/20 hover:border-sunset-400/40 backdrop-blur-sm transition-all duration-300"
     >
       {/* Image Container */}
-      <div className="relative h-56 sm:h-64 overflow-hidden bg-black/40">
+      <div className="relative h-56 sm:h-64 overflow-hidden bg-sky-dark/60 backdrop-blur-sm">
         <img
           src={image}
           alt={name}

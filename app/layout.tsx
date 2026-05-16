@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import FloatingClouds from "@/components/FloatingClouds";
 
 export const metadata: Metadata = {
   title: "Porfolio | Nguyễn Đăng Việt",
@@ -14,7 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased scroll-smooth">
-      <body className="min-h-full flex flex-col bg-black text-[#E1E0CC]">
+      <body className="min-h-full flex flex-col text-[#E1E0CC] overflow-x-hidden">
+        <FloatingClouds />
         {children}
       </body>
     </html>

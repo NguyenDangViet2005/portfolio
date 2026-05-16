@@ -25,10 +25,8 @@ export default function OrbitingIcons({
   return (
     <div className="relative w-full h-[200px] flex items-center justify-center">
       {/* Center circle */}
-      <div className="absolute w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 backdrop-blur-sm flex items-center justify-center z-20">
+      <div className="absolute w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 backdrop-blur-sm flex items-center justify-center z-20">
         <div className="text-center">
-          <p className="text-xs text-zinc-400 font-medium">Tech</p>
-          <p className="text-xs text-zinc-400 font-medium">Stack</p>
         </div>
       </div>
 
@@ -77,11 +75,20 @@ export default function OrbitingIcons({
               ease: "linear",
             }}
           >
-            <div className={`w-16 h-16 rounded-xl ${item.color} backdrop-blur-sm border border-zinc-700/50 flex flex-col items-center justify-center gap-1 shadow-lg hover:scale-110 transition-transform`}>
-              <div className="text-white [&>svg]:w-6 [&>svg]:h-6">
+            <div 
+              className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-lg sm:rounded-xl backdrop-blur-sm border flex flex-col items-center justify-center gap-0.5 sm:gap-1 shadow-lg hover:scale-110 transition-transform"
+              style={{
+                backgroundColor: `${item.color}15`,
+                borderColor: `${item.color}40`,
+              }}
+            >
+              <div 
+                className="[&>svg]:w-4 [&>svg]:h-4 sm:[&>svg]:w-5 sm:[&>svg]:h-5 lg:[&>svg]:w-6 lg:[&>svg]:h-6"
+                style={{ color: item.color }}
+              >
                 {item.icon}
               </div>
-              <span className="text-[8px] text-zinc-300 font-medium text-center leading-tight px-1">
+              <span className="text-[7px] sm:text-[8px] text-zinc-300 font-medium text-center leading-tight px-0.5 sm:px-1">
                 {item.label}
               </span>
             </div>

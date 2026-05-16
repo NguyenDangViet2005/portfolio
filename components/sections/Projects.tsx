@@ -56,7 +56,7 @@ export default function Projects() {
   });
 
   return (
-    <section id="projects" className="relative min-h-screen bg-black px-4 sm:px-6 py-10">
+    <section id="projects" className="relative min-h-screen bg-transparent px-4 sm:px-6 py-10">
       <div className="pointer-events-none absolute bg-noise opacity-[0.15]" />
       <div className="relative mx-auto max-w-[1300px]">
         {/* Header */}
@@ -91,7 +91,7 @@ export default function Projects() {
               delay: 0,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="relative overflow-hidden rounded-2xl bg-black border border-white/5 min-h-[400px] sm:min-h-[450px]"
+            className="relative overflow-hidden rounded-2xl bg-sky-dark/30 border border-sunset-300/20 backdrop-blur-sm min-h-[400px] sm:min-h-[450px]"
           >
             <video
               className="absolute inset-0 h-full w-full object-cover"
