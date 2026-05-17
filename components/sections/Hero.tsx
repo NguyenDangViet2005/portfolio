@@ -69,7 +69,9 @@ export default function Hero() {
               {[
                 { label: "About", href: "#collective" },
                 { label: "Experience", href: "#programs" },
+                { label: "Skills", href: "#playground" },
                 { label: "Projects", href: "#projects" },
+                { label: "Education", href: "#education" },
                 { label: "Contact", href: "#inquiries" },
               ].map((item) => (
                 <li key={item.label}>
