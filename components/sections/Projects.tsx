@@ -80,7 +80,7 @@ export default function Projects() {
         {/* Projects Grid */}
         <div
           ref={projectsRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6"
         >
           {/* Astronaut Video Card */}
           <motion.div
@@ -91,16 +91,17 @@ export default function Projects() {
               delay: 0,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="relative overflow-hidden rounded-2xl bg-sky-dark/30 border border-sunset-300/20 backdrop-blur-sm min-h-[400px] sm:min-h-[450px]"
+            className="group relative overflow-hidden bg-sky-dark/30 border border-sunset-300/20 backdrop-blur-sm min-h-[250px] sm:min-h-[300px]"
           >
             <video
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               autoPlay
               loop
               muted
               playsInline
               src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_133058_0504132a-0cf3-4450-a370-8ea3b05c95d4.mp4"
             />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-500" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
               <h3 className="text-[#E1E0CC] text-2xl sm:text-3xl font-semibold mb-2">

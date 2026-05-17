@@ -6,6 +6,8 @@ import Experience from "@/components/sections/Experience";
 import Contact from "@/components/sections/Contact";
 import ScrollToTop from "@/components/ScrollToTop";
 import Collective from "@/components/sections/Collective";
+import Skills from "@/components/sections/Skills";
+import Education from "@/components/sections/Education";
 
 export default function PrismaLandingPage() {
   return (
@@ -13,7 +15,9 @@ export default function PrismaLandingPage() {
       <Hero />
       <Collective />
       <Experience />
+      <Skills />
       <Projects />
+      <Education />
       <Contact />
       <ScrollToTop />
     </div>

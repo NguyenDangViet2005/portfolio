@@ -45,8 +45,8 @@ export default function Experience() {
         {/* Timeline */}
         <div className="relative">
           {/* Vertical left line - dashed */}
-          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-px">
-            <div className="h-full border-l-2 border-dashed border-sunset-400/40" />
+          <div className="absolute left-4 md:left-8 top-0 bottom-0 flex justify-center w-6 -ml-3">
+            <div className="h-full border-l-[1.5px] border-dashed border-[#E1E0CC]/30" />
           </div>
 
           <div className="space-y-12 md:space-y-16">
@@ -61,10 +61,8 @@ export default function Experience() {
                   className="relative"
                 >
                   {/* Timeline dot with circle border */}
-                  <div className="absolute left-4 md:left-8 top-0 -ml-4 md:-ml-4 flex items-center justify-center z-10">
-                    <div className="w-8 h-8 rounded-full border-2 border-sunset-400 bg-sky-dark flex items-center justify-center shadow-lg shadow-sunset-400/30">
-                      <div className="w-2 h-2 rounded-full bg-sunset-400" />
-                    </div>
+                  <div className="absolute left-4 md:left-8 top-1.5 flex justify-center w-6 -ml-3 z-10">
+                    <div className="w-[18px] h-[18px] rounded-full border-[1.5px] border-[#E1E0CC] bg-transparent" />
                   </div>
 
                   {/* Content */}

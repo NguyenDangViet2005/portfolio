@@ -36,54 +36,26 @@ export default function ProjectCard({
         delay,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-sky-dark/40 to-sky-storm/30 border border-sunset-300/20 hover:border-sunset-400/40 backdrop-blur-sm transition-all duration-300"
+      className="group relative block w-full overflow-hidden bg-sky-dark/40 transition-all duration-300 min-h-[250px] sm:min-h-[300px]"
     >
-      {/* Image Container */}
-      <div className="relative h-56 sm:h-64 overflow-hidden bg-sky-dark/60 backdrop-blur-sm">
-        <img
-          src={image}
-          alt={name}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-        
-        {/* Category Badge */}
-        <div className="absolute top-3 left-3">
-          <span className="inline-block px-3 py-1 text-xs font-medium bg-black/60 backdrop-blur-sm text-[#E1E0CC] rounded-full border border-white/10">
-            {category}
-          </span>
-        </div>
-
-        {/* External Link Icon */}
-        <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="p-2 bg-black/60 backdrop-blur-sm rounded-full border border-white/10">
-            <ExternalLink className="h-4 w-4 text-[#E1E0CC]" />
-          </div>
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="p-6 space-y-4">
-        <div>
-          <h3 className="text-[#E1E0CC] text-lg sm:text-xl font-semibold mb-2 group-hover:text-white transition-colors">
+      <img
+        src={image}
+        alt={name}
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+      
+      <div className="absolute bottom-5 left-5 right-5 sm:bottom-6 sm:left-6 sm:right-6 z-10">
+        <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
+          <h3 className="text-white text-base sm:text-lg font-bold uppercase tracking-wider group-hover:text-sunset-300 transition-colors drop-shadow-md">
             {name}
           </h3>
-          <p className="text-gray-400 text-xs sm:text-sm leading-relaxed line-clamp-2">
-            {desc}
-          </p>
+          <ExternalLink className="h-4 w-4 text-white group-hover:text-sunset-300 transition-colors drop-shadow-md" />
         </div>
-
-        {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2 pt-2">
-          {tech.map((item, index) => (
-            <span
-              key={index}
-              className="px-2.5 py-1 text-[10px] sm:text-xs bg-white/5 text-gray-400 rounded-lg border border-white/5"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
+        <p className="text-gray-200 text-sm sm:text-base font-light leading-snug drop-shadow-md">
+          {desc}
+        </p>
       </div>
     </motion.a>
   );
