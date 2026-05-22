@@ -9,7 +9,7 @@ type Segment = {
 };
 
 const aboutText =
-  "An enthusiastic fullstack developer based in Da Nang City. Over the last few years I have delivered 7+ full-stack applications, maintained a 3.9/4.0 GPA, and focused on system architecture, performance, and secure engineering across Next.js, Node.js, and modern databases.";
+  "An enthusiastic web developer.";
 
 function WordsPullUpMultiStyle({
   segments,
@@ -72,7 +72,7 @@ export default function Hero() {
                 { label: "Skills", href: "#playground" },
                 { label: "Projects", href: "#projects" },
                 { label: "Education", href: "#education" },
-                { label: "Contact", href: "#inquiries" },
+                { label: "End", href: "#inquiries" },
               ].map((item) => (
                 <li key={item.label}>
                   <a
@@ -89,15 +89,14 @@ export default function Hero() {
 
         <div className="absolute bottom-0 left-0 right-0 px-4 sm:px-6 md:px-10 pb-6 sm:pb-10">
           <div className="flex flex-col gap-6">
-            <div className="max-w-5xl">
+            <div className="max-w-6xl">
               <WordsPullUpMultiStyle
                 segments={[
                   { text: "Hi there,", className: "font-normal" },
                   {
-                    text: "I am Nguyen Dang Viet.",
+                    text: "I'm  Nguyen Dang Viet.",
                     className: "font-serif italic text-primary",
                   },
-                  
                 ]}
                 className="text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95] sm:leading-[0.9]"
               />
@@ -106,7 +105,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-primary/70 text-xs sm:text-sm md:text-base leading-[1.6] max-w-3xl"
+              className="text-primary/70 text-xs sm:text-sm md:text-lg leading-[1.6] max-w-3xl"
             >
               {aboutText}
             </motion.p>

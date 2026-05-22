@@ -6,7 +6,7 @@ import { experiences } from "@/data/experiences";
 
 export default function Experience() {
   return (
-    <section id="programs" className="relative bg-transparent px-4 sm:px-6 py-20 overflow-hidden">
+    <section id="programs" className="relative bg-[#0f0e0c]/60 px-4 sm:px-6 py-20 overflow-hidden">
       {/* Decorative gradient orbs */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-sunset-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-sky-mist/10 rounded-full blur-3xl" />

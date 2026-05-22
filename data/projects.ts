@@ -24,14 +24,6 @@ export const projects = [
     demo: "https://trello-web-ivory.vercel.app/",
   },
   {
-    name: "ShopACVN",
-    category: "Game Account Shop",
-    desc: "A professional marketplace for Arena of Valor (AOV) game accounts with secure transactions.",
-    tech: ["Next.js", "NestJS", "PostgreSQL"],
-    image: "/projects/shopaccvn.png",
-    demo: "https://shopacvn.com/",
-  },
-  {
     name: "Movie Tickets",
     category: "Frontend UI",
     desc: "Modern frontend interface for booking movie, music, and concert tickets with seamless user flow.",

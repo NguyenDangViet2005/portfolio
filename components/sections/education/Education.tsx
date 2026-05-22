@@ -14,7 +14,7 @@ export default function Education() {
   ];
 
   return (
-    <section id="education" className="relative bg-transparent px-4 sm:px-6 py-20">
+    <section id="education" className="relative bg-[#0f0e0c]/60 px-4 sm:px-6 py-20">
       <div className="relative mx-auto max-w-6xl space-y-12">
         <div className="text-left mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">

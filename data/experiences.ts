@@ -1,6 +1,6 @@
 export const experiences = [
   {
-    period: "01/2025 - Now",
+    period: "10/2025 - 11/2025",
     title: "Star Systemsable",
     role: "Full-stack Developer",
     teamSize: 3,
@@ -17,7 +17,7 @@ export const experiences = [
     link: "https://star.systemsable.app/en",
   },
   {
-    period: "10/2024 - 12/2024",
+    period: "11/2025 - 12/2025",
     title: "Best Game Account",
     role: "Full-stack Developer",
     teamSize: 3,
@@ -34,24 +34,7 @@ export const experiences = [
     link: "https://www.palyio.com/en",
   },
   {
-    period: "08/2024 - 10/2024",
-    title: "ShopACVN",
-    role: "Full-stack Developer",
-    teamSize: 3,
-    description: "ShopACVN is a professional marketplace for Arena of Valor (AOV) game accounts with secure transactions and account verification.",
-    responsibilities: [
-      "Responsible for developing marketplace platform with Next.js, NestJS, and PostgreSQL.",
-      "Implemented account verification system to ensure quality and authenticity.",
-      "Built secure transaction flow with escrow payment system.",
-      "Developed search and filter functionality for game accounts with multiple criteria.",
-      "Created user dashboard for managing listings and purchase history.",
-      "Optimized SEO and performance for better user experience and search rankings.",
-    ],
-    tech: ["Next.js", "NestJS", "PostgreSQL", "TypeScript", "TailwindCSS"],
-    link: "https://shopacvn.com/",
-  },
-  {
-    period: "06/2024 - 08/2024",
+    period: "11/2025",
     title: "Movie Tickets",
     role: "Frontend Developer",
     teamSize: 2,

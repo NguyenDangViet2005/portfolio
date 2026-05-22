@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCard from "@/components/sections/project/ProjectCard";
 import ShinyText from "@/components/ShinyText";
 import { projects } from "@/data/projects";
 
@@ -56,7 +56,7 @@ export default function Projects() {
   });
 
   return (
-    <section id="projects" className="relative min-h-screen bg-transparent px-4 sm:px-6 py-10">
+    <section id="projects" className="relative min-h-screen bg-[#0f0e0c]/60 px-4 sm:px-6 py-10">
       <div className="pointer-events-none absolute bg-noise opacity-[0.15]" />
       <div className="relative mx-auto max-w-[1300px]">
         {/* Header */}
@@ -82,37 +82,6 @@ export default function Projects() {
           ref={projectsRef}
           className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6"
         >
-          {/* Astronaut Video Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={projectsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{
-              duration: 0.6,
-              delay: 0,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="group relative overflow-hidden bg-sky-dark/30 border border-sunset-300/20 backdrop-blur-sm min-h-[250px] sm:min-h-[300px]"
-          >
-            <video
-              className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              autoPlay
-              loop
-              muted
-              playsInline
-              src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_133058_0504132a-0cf3-4450-a370-8ea3b05c95d4.mp4"
-            />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-500" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6">
-              <h3 className="text-[#E1E0CC] text-2xl sm:text-3xl font-semibold mb-2">
-                Your creative canvas.
-              </h3>
-              <p className="text-gray-400 text-sm sm:text-base">
-                Explore my journey through code and design.
-              </p>
-            </div>
-          </motion.div>
-
           {/* Project Cards */}
           {projects.map((project, index) => (
             <ProjectCard

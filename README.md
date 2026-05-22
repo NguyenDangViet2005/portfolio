@@ -8,7 +8,7 @@
 </h1>
 
 <h3 style="font-weight: 500; color: #334155;">
-  💻 Fullstack Developer • Đam mê công nghệ & sáng tạo sản phẩm thực tế
+  💻 Web Developer • Đam mê công nghệ & sáng tạo sản phẩm thực tế
 </h3>
 
 <p style="color: #4B5563; font-size: 1.05rem; line-height: 1.7;">
@@ -17,7 +17,7 @@
 </p>
 
 <img 
-  src="https://readme-typing-svg.herokuapp.com/?font=Noto+Sans&weight=600&size=22&duration=4000&pause=500&color=1E3A8A&center=false&vCenter=true&width=650&lines=Lập+trình+viên+Fullstack;Đam+mê+kiến+trúc+sạch+và+tối+ưu+hệ+thống;Không+ngừng+học+hỏi+và+phát+triển;Xây+dựng+sản+phẩm+mang+lại+giá+trị+thực+tế" 
+  src="https://readme-typing-svg.herokuapp.com/?font=Noto+Sans&weight=600&size=22&duration=4000&pause=500&color=1E3A8A&center=false&vCenter=true&width=650&lines=Lập+trình+viên+Web;Đam+mê+kiến+trúc+sạch+và+tối+ưu+hệ+thống;Không+ngừng+học+hỏi+và+phát+triển;Xây+dựng+sản+phẩm+mang+lại+giá+trị+thực+tế" 
   alt="Typing SVG"
 />
 
@@ -34,7 +34,7 @@
 <td width="65%" valign="top">
 <h2>🌟 Giới thiệu</h2>
 
-Mình là **Nguyễn Đăng Việt**, một **Lập trình viên Fullstack** đam mê công nghệ và định hướng phát triển thành **System Architect** trong tương lai.
+Mình là **Nguyễn Đăng Việt**, một **Lập trình viên Web** đam mê công nghệ và định hướng phát triển thành **System Architect** trong tương lai.
 Với nền tảng vững chắc về **phát triển ứng dụng web và xây dựng hệ thống doanh nghiệp**, mình có khả năng đảm nhận trọn vẹn quy trình phát triển phần mềm — **từ phân tích yêu cầu, thiết kế kiến trúc hệ thống, xây dựng giải pháp kỹ thuật, đến triển khai, tối ưu và bảo trì sản phẩm thực tế.**
 
 Mình luôn đặt trọng tâm vào việc thiết kế hệ thống có khả năng mở rộng (scalable), tối ưu hiệu năng (performance optimization) và bảo mật ở cấp ứng dụng (application-level security).
@@ -53,7 +53,7 @@ Mình luôn đặt trọng tâm vào việc thiết kế hệ thống có khả 
 
 ### 💬 Mục tiêu:
 
-Mình hướng đến việc trở thành **Fullstack Developer chuyên sâu về kiến trúc hệ thống và tối ưu hiệu năng.**
+Mình hướng đến việc trở thành **Web Developer chuyên sâu về kiến trúc hệ thống và tối ưu hiệu năng.**
 Mục tiêu của mình là tạo ra các **ứng dụng thực tế, hữu ích và có giá trị lâu dài cho người dùng**, đồng thời xây dựng **môi trường code sạch (Clean Architecture), thành phần tái sử dụng cao (Reusable Components), và hệ thống backend có khả năng mở rộng linh hoạt (Scalable Backend Infrastructure).**
 
 📫 **Liên hệ:** [Vietnguyen.1022005@gmail.com](mailto:Vietnguyen.1022005@gmail.com)
