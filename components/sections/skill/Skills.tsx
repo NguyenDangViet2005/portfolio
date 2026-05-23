@@ -2,30 +2,35 @@
 
 import { motion } from "framer-motion";
 import ShinyText from "@/components/ShinyText";
-import { 
-  SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiVuedotjs, SiNuxt, 
-  SiNodedotjs, SiRedux, SiMongodb, SiMysql, SiHtml5, SiCss, SiTailwindcss, 
-  SiMui, SiBootstrap, SiGithub, SiTrello, SiSlack, SiWordpress
+import {
+  SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiVuedotjs, SiNuxt,
+  SiNodedotjs, SiRedux, SiMongodb, SiMysql, SiHtml5, SiCss, SiTailwindcss,
+  SiMui, SiBootstrap, SiGithub, SiTrello, SiSlack, SiWordpress,
+  SiNestjs,
+  SiExpress,
+  SiPostgresql
 } from "react-icons/si";
 import { Check } from "lucide-react";
 
 export default function Skills() {
   const tools = [
+    { icon: SiHtml5, color: "text-[#E34F26]" },
+    { icon: SiCss, color: "text-[#1572B6]" },
     { icon: SiJavascript, color: "text-[#F7DF1E]" },
     { icon: SiTypescript, color: "text-[#3178C6]" },
     { icon: SiReact, color: "text-[#61DAFB]" },
-    { icon: SiNextdotjs, color: "text-white" },
-    { icon: SiNodedotjs, color: "text-[#339933]" },
     { icon: SiRedux, color: "text-[#764ABC]" },
-    { icon: SiMongodb, color: "text-[#47A248]" },
-    { icon: SiMysql, color: "text-[#4479A1]" },
-    { icon: SiHtml5, color: "text-[#E34F26]" },
-    { icon: SiCss, color: "text-[#1572B6]" },
     { icon: SiTailwindcss, color: "text-[#06B6D4]" },
     { icon: SiMui, color: "text-[#007FFF]" },
     { icon: SiBootstrap, color: "text-[#7952B3]" },
+    { icon: SiNextdotjs, color: "text-white" },
+    { icon: SiNodedotjs, color: "text-[#339933]" },
+    { icon: SiExpress, color: "text-gray-400" },
+    { icon: SiNestjs, color: "text-[#E02347]" },
+    { icon: SiMongodb, color: "text-[#47A248]" },
+    { icon: SiMysql, color: "text-[#4479A1]" },
+    { icon: SiPostgresql, color: "text-[#4479A1]" },
     { icon: SiGithub, color: "text-white" },
-    { icon: SiTrello, color: "text-[#0052CC]" },
   ];
 
   const workflows = [
@@ -33,17 +38,9 @@ export default function Skills() {
     { text: "Git, Github for Teamwork" },
     { text: "Responsive Web Design" },
     { text: "Agile Development & Scrum" },
-    { 
-      text: "English for Work!",
-      subItems: [
-        "Reading: Comfortable reading technical documentation, tutorials, and project requirements in English for studying and web development projects.",
-        "Speaking: Able to communicate in English in daily conversations and teamwork situations. Currently improving my speaking skills through regular practice and self-study.",
-        "Goal: Looking forward to gaining more real-world experience in an international working environment while continuing to improve my English communication skills."
-      ]
-    },
-    { 
-      text: "My maxim: ", 
-      italic: "Learning new everyday not the copycat of yesterday!" 
+    {
+      text: "My maxim: ",
+      italic: "Keep building. Keep becoming."
     }
   ];
 
@@ -94,16 +91,6 @@ export default function Skills() {
                         {item.text}
                         {item.italic && <span className="italic font-light text-gray-400">"{item.italic}"</span>}
                       </span>
-                      {item.subItems && (
-                        <ul className="mt-2 space-y-2 text-gray-400 text-sm sm:text-base leading-relaxed">
-                          {item.subItems.map((sub, i) => (
-                            <li key={i} className="flex gap-2">
-                              <span className="text-gray-500">•</span>
-                              <span>{sub}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
                     </div>
                   </div>
                 </motion.div>

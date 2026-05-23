@@ -6,12 +6,12 @@ import AboutColumn from "./AboutColumn";
 import TechStackColumn from "./TechStackColumn";
 import WhatIBringColumn from "./WhatIBringColumn";
 
-export default function Collective() {
+export default function About() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const sectionInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="collective" className="relative bg-[#0f0e0c]/60 px-4 sm:px-6 py-16">
+    <section id="about" className="relative bg-[#0f0e0c]/60 px-4 sm:px-6 py-16">
       {/* Hidden scrollspy target */}
       <div id="overview" className="absolute -top-16" />
 

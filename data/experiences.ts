@@ -2,13 +2,11 @@ export const experiences = [
   {
     period: "10/2025 - 11/2025",
     title: "Star Systemsable",
-    role: "Full-stack Developer",
     teamSize: 3,
     description: "Star Systemsable is a gamified child management system using task creation and star rewards to encourage positive behavior.",
     responsibilities: [
-      "Responsible for developing full-stack features with Next.js, ExpressJS, MongoDB, and Mapbox integration.",
+      "Responsible for developing features with Next.js, ExpressJS, MongoDB.",
       "Implemented gamification system with task creation, star rewards, and behavior tracking.",
-      "Built interactive map features using Mapbox for location-based activities.",
       "Designed and developed RESTful APIs for task management and reward systems.",
       "Collaborated with team to ensure seamless integration between frontend and backend.",
       "Optimized database queries and implemented caching strategies for better performance.",
@@ -19,7 +17,6 @@ export const experiences = [
   {
     period: "11/2025 - 12/2025",
     title: "Best Game Account",
-    role: "Full-stack Developer",
     teamSize: 3,
     description: "Best Game Account is a featured e-commerce platform dedicated to high-quality game account trading with secure payment integration.",
     responsibilities: [
@@ -28,7 +25,6 @@ export const experiences = [
       "Built product listing, search, and filtering features with advanced query optimization.",
       "Integrated payment gateway for secure transactions.",
       "Developed admin dashboard for managing products, users, and transactions.",
-      "Implemented real-time notifications for order updates and account transfers.",
     ],
     tech: ["Next.js", "NestJS", "PostgreSQL", "TypeScript", "TailwindCSS"],
     link: "https://www.palyio.com/en",
@@ -36,14 +32,11 @@ export const experiences = [
   {
     period: "11/2025",
     title: "Movie Tickets",
-    role: "Frontend Developer",
     teamSize: 2,
     description: "Movie Tickets is a modern frontend interface for booking movie, music, and concert tickets with seamless user flow and responsive design.",
     responsibilities: [
       "Responsible for developing frontend interface with React and TailwindCSS.",
       "Implemented responsive design for mobile, tablet, and desktop devices.",
-      "Built seat selection interface with real-time availability updates.",
-      "Developed booking flow with step-by-step navigation and form validation.",
       "Created reusable components for movie cards, ticket selection, and payment forms.",
       "Optimized performance with code splitting and lazy loading.",
     ],
@@ -53,17 +46,16 @@ export const experiences = [
   {
     period: "2023 - now",
     title: "Student Developer",
-    role: "University Projects",
     teamSize: null,
-    description: "Developed various academic and personal projects while maintaining a 3.9/4.0 GPA, focusing on system design and full-stack development.",
+    description: "Developed various academic and personal projects, focusing on system design.",
     responsibilities: [
       "Led team projects in Software Engineering courses with agile methodology.",
       "Built real-world applications solving actual business problems.",
       "Gained experience in debugging, code review, and version control with Git.",
       "Collaborated with team members to deliver high-quality software solutions.",
-      "Learned and applied best practices in software architecture and design patterns.",
+      "Learned and applied best practices in software architecture.",
     ],
-    tech: ["Java", "Spring Boot", "React", "MySQL", "Git"],
+    tech: null,
     link: null,
   },
 ];

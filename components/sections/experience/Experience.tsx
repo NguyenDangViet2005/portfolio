@@ -6,11 +6,11 @@ import { experiences } from "@/data/experiences";
 
 export default function Experience() {
   return (
-    <section id="programs" className="relative bg-[#0f0e0c]/60 px-4 sm:px-6 py-20 overflow-hidden">
+    <section id="experience" className="relative bg-[#0f0e0c]/60 px-4 sm:px-6 py-20 overflow-hidden">
       {/* Decorative gradient orbs */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-sunset-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-sky-mist/10 rounded-full blur-3xl" />
-      
+
       <div className="relative mx-auto max-w-6xl space-y-12">
         {/* Header */}
         <div className="text-center">
@@ -85,10 +85,7 @@ export default function Experience() {
                             </a>
                           )}
                         </div>
-                        <p className="text-gray-400 text-sm">
-                          {experience.role}
-                        </p>
-                        
+
                         {/* Meta info */}
                         <div className="flex gap-3 text-xs text-gray-500 flex-wrap">
                           <span>{experience.period}</span>
@@ -121,16 +118,18 @@ export default function Experience() {
                       </div>
 
                       {/* Tech stack */}
-                      <div className="flex flex-wrap gap-2 pt-2">
-                        {experience.tech.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-3 py-1 text-xs text-gray-400 border border-sunset-400/20 rounded-full hover:border-sunset-400/40 transition-colors"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                      {experience.tech && (
+                        <div className="flex flex-wrap gap-2 pt-2">
+                          {experience.tech.map((tech) => (
+                            <span
+                              key={tech}
+                              className="px-3 py-1 text-xs text-gray-400 border border-sunset-400/20 rounded-full hover:border-sunset-400/40 transition-colors"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </motion.div>

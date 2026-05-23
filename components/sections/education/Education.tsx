@@ -8,7 +8,7 @@ import { ExternalLink, Bookmark } from "lucide-react";
 export default function Education() {
   const points = [
     "During my time at university, I have developed programming, problem-solving, and teamwork skills through both academic projects and self-learning.",
-    "I enjoy creating user-friendly interfaces and customizing web experiences, which motivated me to pursue Frontend and Full Stack Development.",
+    "I enjoy creating user-friendly interfaces and customizing web experiences, which motivated me to pursue Web Development.",
     "Besides coursework, I actively explore modern technologies such as JavaScript, React, Node.js, and MongoDB through personal projects and online learning.",
     "University life has also helped me improve my communication skills, collaborate with classmates, and gain confidence in presenting technical ideas."
   ];
@@ -39,7 +39,7 @@ export default function Education() {
                   <ExternalLink size={20} className="text-gray-400 group-hover:text-white transition-colors" />
                 </a>
                 <p className="text-gray-300 mt-2 text-lg leading-relaxed">
-                  I am currently a third-year student majoring in Information Systems Security Engineering. While studying, I discovered a strong passion for Web Development and decided to focus on building modern, interactive web applications.
+                  I am currently a third-year student majoring in Information Technology with a GPA of 3.9/4.0 and 4 scholarships. While studying, I discovered a strong passion for Web Development and decided to focus on building modern, interactive web applications.
                 </p>
               </div>
               <div className="font-medium whitespace-nowrap text-lg">
@@ -63,7 +63,7 @@ export default function Education() {
               ))}
             </div>
           </div>
-          
+
           {/* Logo */}
           <div className="w-full lg:w-72 h-auto flex-shrink-0 bg-white/5 rounded-2xl p-6 flex items-center justify-center border border-zinc-800 shadow-2xl order-1 lg:order-2">
             <Image src="/ute.png" alt="University Logo" width={300} height={300} className="object-contain w-full h-auto drop-shadow-xl" />

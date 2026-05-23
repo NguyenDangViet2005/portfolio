@@ -67,12 +67,12 @@ export default function Hero() {
           <nav className="bg-black rounded-b-2xl md:rounded-b-3xl px-4 py-2 md:px-8">
             <ul className="flex items-center gap-3 sm:gap-6 md:gap-12 lg:gap-14 text-[10px] sm:text-xs md:text-sm">
               {[
-                { label: "About", href: "#collective" },
-                { label: "Experience", href: "#programs" },
-                { label: "Skills", href: "#playground" },
+                { label: "About", href: "#about" },
+                { label: "Experience", href: "#experience" },
+                { label: "Skills", href: "#skills" },
                 { label: "Projects", href: "#projects" },
                 { label: "Education", href: "#education" },
-                { label: "End", href: "#inquiries" },
+                { label: "The End", href: "#the-end" },
               ].map((item) => (
                 <li key={item.label}>
                   <a
