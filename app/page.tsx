@@ -12,8 +12,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const years =
     stats.find((stat) => stat.label === "Years Experience")?.value ?? "1+";
 
-  const title = "Portfolio";
-  const description = `Full-stack portfolio by ${site.name} with ${projectCount}+ projects and ${years} years of experience.`;
+  const title = site.title;
+  const description = `Full-stack portfolio by ${site.name} with ${projectCount}+ projects and ${years} years of experience, focused on modern Next.js and React builds.`;
 
   return {
     title,
@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
       canonical: site.url,
     },
     openGraph: {
-      title: `${title} | ${site.name}`,
+      title,
       description,
       url: site.url,
       siteName: site.name,
@@ -39,7 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | ${site.name}`,
+      title,
       description,
       images: [site.ogImage],
     },

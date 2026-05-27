@@ -10,10 +10,10 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 export const getSiteConfig = cache(() => ({
   url: siteUrl,
   name: "Nguyen Dang Viet",
-  title: "Portfolio | Nguyen Dang Viet",
+  title: "Nguyen Dang Viet Portfolio | Full-stack web developer",
   description:
-    "Portfolio of Nguyen Dang Viet, a full-stack developer focused on performant, scalable web experiences.",
-  ogImage: "/ndv.png",
+    "Full-stack portfolio showcasing Next.js, React, and scalable web apps with real projects, case studies, and contact details.",
+  ogImage: `${siteUrl}/ndv.png`,
   locale: "en_US",
   role: "Full-stack Developer",
 }));

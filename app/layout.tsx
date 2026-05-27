@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     default: "Portfolio | Nguyen Dang Viet",
   },
   description:
-    "Portfolio of Nguyen Dang Viet, a full-stack developer focused on performant, scalable web experiences.",
+    "Full-stack portfolio showcasing Next.js, React, and scalable web apps with real projects, case studies, and contact details.",
 };
 
 export default function RootLayout({
