@@ -1,25 +1,81 @@
-"use client";
+import type { Metadata } from "next";
 
-import Hero from "@/components/sections/hero/Hero";
-import Projects from "@/components/sections/project/Projects";
-import Experience from "@/components/sections/experience/Experience";
-import ScrollToTop from "@/components/ScrollToTop";
-import About from "@/components/sections/about/About";
-import Skills from "@/components/sections/skill/Skills";
-import Education from "@/components/sections/education/Education";
-import End from "@/components/end/End";
+import HomePage from "@/app/home-page";
+import StructuredData from "@/components/StructuredData";
+import { getProjects, getSiteConfig, getStats } from "@/lib/portfolio-data";
 
-export default function PrismaLandingPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const site = getSiteConfig();
+  const projects = getProjects();
+  const stats = getStats();
+  const projectCount = projects.length;
+  const years =
+    stats.find((stat) => stat.label === "Years Experience")?.value ?? "1+";
+
+  const title = "Portfolio";
+  const description = `Full-stack portfolio by ${site.name} with ${projectCount}+ projects and ${years} years of experience.`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: site.url,
+    },
+    openGraph: {
+      title: `${title} | ${site.name}`,
+      description,
+      url: site.url,
+      siteName: site.name,
+      images: [
+        {
+          url: site.ogImage,
+          width: 1200,
+          height: 630,
+          alt: site.name,
+        },
+      ],
+      locale: site.locale,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | ${site.name}`,
+      description,
+      images: [site.ogImage],
+    },
+  };
+}
+
+export default function Page() {
+  const site = getSiteConfig();
+  const projects = getProjects();
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: site.name,
+    jobTitle: site.role,
+    url: site.url,
+    knowsAbout: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "MongoDB",
+    ],
+    workExample: projects.map((project) => ({
+      "@type": "CreativeWork",
+      name: project.name,
+      description: project.desc,
+      url: project.demo,
+    })),
+  };
+
   return (
-    <div style={{ color: "#E1E0CC" }} className="overflow-x-hidden">
-      <Hero />
-      <About />
-      <Experience />
-      <Skills />
-      <Projects />
-      <Education />
-      <End />
-      <ScrollToTop />
-    </div>
+    <>
+      <StructuredData data={jsonLd} />
+      <HomePage />
+    </>
   );
 }

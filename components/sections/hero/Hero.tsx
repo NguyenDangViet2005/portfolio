@@ -8,8 +8,7 @@ type Segment = {
   className?: string;
 };
 
-const aboutText =
-  "An enthusiastic web developer.";
+const aboutText = "An enthusiastic web developer.";
 
 function WordsPullUpMultiStyle({
   segments,
@@ -24,7 +23,7 @@ function WordsPullUpMultiStyle({
     segment.text.split(" ").map((word) => ({
       word,
       className: segment.className ?? "",
-    }))
+    })),
   );
 
   return (
@@ -64,7 +63,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60" />
 
         <div className="absolute top-0 left-1/2 -translate-x-1/2">
-          <nav className="bg-black rounded-b-2xl md:rounded-b-3xl px-4 py-2 md:px-8">
+          <nav className="hidden md:block bg-black rounded-b-2xl md:rounded-b-3xl px-4 py-2 md:px-8">
             <ul className="flex items-center gap-3 sm:gap-6 md:gap-12 lg:gap-14 text-[10px] sm:text-xs md:text-sm">
               {[
                 { label: "About", href: "#about" },
@@ -104,7 +103,11 @@ export default function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                delay: 0.5,
+                duration: 0.8,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className="text-primary/70 text-xs sm:text-sm md:text-lg leading-[1.6] max-w-3xl"
             >
               {aboutText}
