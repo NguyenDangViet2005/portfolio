@@ -5,7 +5,13 @@ import { projects } from "@/data/projects";
 import { stats } from "@/data/stats";
 import { passions, timeline } from "@/data/story";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const rawSiteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  process.env.VERCEL_URL ??
+  "http://localhost:3000";
+const siteUrl = rawSiteUrl.startsWith("http")
+  ? rawSiteUrl
+  : `https://${rawSiteUrl}`;
 
 export const getSiteConfig = cache(() => ({
   url: siteUrl,

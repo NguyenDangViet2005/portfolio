@@ -3,8 +3,9 @@ import "./globals.css";
 import FloatingClouds from "@/components/FloatingClouds";
 import StructuredData from "@/components/StructuredData";
 import { getSiteConfig } from "@/lib/portfolio-data";
+import { getSiteConfig as getSiteConfigForMetadata } from "@/lib/portfolio-data";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = getSiteConfigForMetadata().url;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
