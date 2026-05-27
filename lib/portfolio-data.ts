@@ -8,7 +8,7 @@ import { passions, timeline } from "@/data/story";
 const rawSiteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   process.env.VERCEL_URL ??
-  "http://localhost:3000";
+  "https://portfolio-snowy-nu-89.vercel.app";
 const siteUrl = rawSiteUrl.startsWith("http")
   ? rawSiteUrl
   : `https://${rawSiteUrl}`;
