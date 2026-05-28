@@ -2,7 +2,16 @@
 
 import { motion } from "framer-motion";
 import { Gem, Handshake, Gauge, Lock, Puzzle, Code2 } from "lucide-react";
-import { FiGithub, FiLinkedin, FiMail, FiMapPin, FiPhone, FiFacebook, FiInstagram, FiDownload } from "react-icons/fi";
+import {
+  FiGithub,
+  FiLinkedin,
+  FiMail,
+  FiMapPin,
+  FiPhone,
+  FiFacebook,
+  FiInstagram,
+  FiDownload,
+} from "react-icons/fi";
 
 interface WhatIBringColumnProps {
   sectionInView: boolean;
@@ -11,20 +20,20 @@ interface WhatIBringColumnProps {
 const themeMap = {
   amber: {
     card: "border-amber-500/10 bg-amber-500/[0.01] hover:border-amber-500/30 hover:bg-amber-500/[0.03] hover:shadow-[0_0_15px_rgba(245,124,0,0.06)]",
-    icon: "border-amber-500/20 text-amber-400"
+    icon: "border-amber-500/20 text-amber-400",
   },
   emerald: {
     card: "border-emerald-500/10 bg-amber-500/[0.01] hover:border-emerald-500/30 hover:bg-emerald-500/[0.03] hover:shadow-[0_0_15px_rgba(16,185,129,0.06)]",
-    icon: "border-emerald-500/20 text-emerald-400"
+    icon: "border-emerald-500/20 text-emerald-400",
   },
   purple: {
     card: "border-purple-500/10 bg-amber-500/[0.01] hover:border-purple-500/30 hover:bg-purple-500/[0.03] hover:shadow-[0_0_15px_rgba(168,85,247,0.06)]",
-    icon: "border-purple-500/20 text-purple-400"
+    icon: "border-purple-500/20 text-purple-400",
   },
   cyan: {
     card: "border-cyan-500/10 bg-amber-500/[0.01] hover:border-cyan-500/30 hover:bg-cyan-500/[0.03] hover:shadow-[0_0_15px_rgba(6,182,212,0.06)]",
-    icon: "border-cyan-500/20 text-cyan-400"
-  }
+    icon: "border-cyan-500/20 text-cyan-400",
+  },
 } as const;
 
 const rightCards: {
@@ -37,29 +46,31 @@ const rightCards: {
     title: "Performance Focused",
     desc: "Optimize application performance and user experience.",
     icon: <Gauge className="w-4 h-4" />,
-    color: "amber"
+    color: "amber",
   },
   {
     title: "Security Mindset",
     desc: "Build secure applications and follow best security practices.",
     icon: <Lock className="w-4 h-4" />,
-    color: "amber"
+    color: "amber",
   },
   {
     title: "Problem Solver",
     desc: "Strong analytical thinking and effective problem-solving skills.",
     icon: <Puzzle className="w-4 h-4" />,
-    color: "amber"
+    color: "amber",
   },
   {
     title: "Clean & Maintainable Code",
     desc: "Write clean, modular, and well-documented code.",
     icon: <Code2 className="w-4 h-4" />,
-    color: "amber"
-  }
+    color: "amber",
+  },
 ];
 
-export default function WhatIBringColumn({ sectionInView }: WhatIBringColumnProps) {
+export default function WhatIBringColumn({
+  sectionInView,
+}: WhatIBringColumnProps) {
   return (
     <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between gap-6">
       <div>
@@ -83,12 +94,18 @@ export default function WhatIBringColumn({ sectionInView }: WhatIBringColumnProp
                 transition={{ duration: 0.5, delay: 0.1 * index }}
                 className={`flex gap-3 p-3 rounded-xl border transition-all duration-300 group ${theme.card}`}
               >
-                <div className={`w-9 h-9 flex-shrink-0 rounded-lg border bg-amber-500/5 flex items-center justify-center transition-all duration-300 group-hover:scale-105 ${theme.icon}`}>
+                <div
+                  className={`w-9 h-9 flex-shrink-0 rounded-lg border bg-amber-500/5 flex items-center justify-center transition-all duration-300 group-hover:scale-105 ${theme.icon}`}
+                >
                   {card.icon}
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[13px] text-zinc-100 mb-0.5">{card.title}</h4>
-                  <p className="text-[11px] text-zinc-400 leading-normal font-light">{card.desc}</p>
+                  <h4 className="font-semibold text-[13px] text-zinc-100 mb-0.5">
+                    {card.title}
+                  </h4>
+                  <p className="text-[11px] text-zinc-400 leading-normal font-light">
+                    {card.desc}
+                  </p>
                 </div>
               </motion.div>
             );
@@ -170,7 +187,7 @@ export default function WhatIBringColumn({ sectionInView }: WhatIBringColumnProp
 
             {/* Download CV */}
             <a
-              href="/cv.pdf"
+              href="/NguyenDangViet_cv.pdf"
               download="NguyenDangViet_CV.pdf"
               className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-amber-500/10 text-amber-500 hover:text-amber-400 border border-amber-500/20 hover:border-amber-500/30 font-medium rounded-lg hover:bg-amber-500/20 transition-all duration-300 text-xs shadow-[0_0_10px_rgba(245,124,0,0.05)] hover:scale-102"
             >
