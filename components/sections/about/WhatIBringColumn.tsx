@@ -188,7 +188,7 @@ export default function WhatIBringColumn({
             {/* Download CV */}
             <a
               href="/NguyenDangViet_cv.pdf"
-              download="NguyenDangViet_CV.pdf"
+              download="NguyenDangViet_cv.pdf"
               className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-amber-500/10 text-amber-500 hover:text-amber-400 border border-amber-500/20 hover:border-amber-500/30 font-medium rounded-lg hover:bg-amber-500/20 transition-all duration-300 text-xs shadow-[0_0_10px_rgba(245,124,0,0.05)] hover:scale-102"
             >
               <FiDownload className="w-3.5 h-3.5" />
