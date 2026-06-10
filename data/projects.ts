@@ -13,7 +13,7 @@ export const projects = [
     desc: "Cloud-based point-of-sale system with real-time inventory management.",
     tech: ["Next.js", "ExpressJs", "MongoDB", "Socket.io"],
     image: "/projects/smartpos.png",
-    demo: "https://smart-pos-roan.vercel.app/",
+    demo: "https://smartpos-ndv.vercel.app/",
   },
   {
     name: "Trello Clone",
@@ -21,7 +21,7 @@ export const projects = [
     desc: "Task management app with drag & drop and real-time collaboration.",
     tech: ["React", "ExpressJs", "MongoDB", "DnD Kit"],
     image: "/projects/trello.png",
-    demo: "https://trello-web-ivory.vercel.app/",
+    demo: "https://trello-web-ndv.vercel.app/",
   },
   {
     name: "Movie Tickets",
