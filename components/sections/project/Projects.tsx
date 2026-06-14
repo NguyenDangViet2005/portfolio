@@ -57,7 +57,6 @@ export default function Projects() {
 
   return (
     <section id="projects" className="relative min-h-screen bg-[#0f0e0c]/60 px-4 sm:px-6 py-10">
-      <div className="pointer-events-none absolute bg-noise opacity-[0.15]" />
       <div className="relative mx-auto max-w-[1300px]">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">

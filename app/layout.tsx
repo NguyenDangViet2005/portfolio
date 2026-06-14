@@ -37,6 +37,8 @@ export default function RootLayout({
         <StructuredData data={jsonLd} />
       </head>
       <body className="min-h-full flex flex-col text-[#E1E0CC] overflow-x-hidden">
+        <div className="fixed-bg" />
+        <div className="fixed-bg-overlay" />
         <FloatingClouds />
         {children}
       </body>

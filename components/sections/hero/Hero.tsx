@@ -59,7 +59,6 @@ export default function Hero() {
           playsInline
           src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
         />
-        <div className="absolute inset-0 noise-overlay opacity-[0.7] mix-blend-overlay pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60" />
 
         <div className="absolute top-0 left-1/2 -translate-x-1/2">
