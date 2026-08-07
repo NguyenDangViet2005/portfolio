@@ -12,10 +12,7 @@ import MobileBottomNav from "@/components/MobileBottomNav";
 
 export default function HomePage() {
   return (
-    <div
-      style={{ color: "#E1E0CC" }}
-      className="overflow-x-hidden pb-24 md:pb-0"
-    >
+    <div className="overflow-x-hidden pb-24 md:pb-0 bg-[var(--bg-color)] text-[var(--text-main)] transition-colors duration-200">
       <Hero />
       <About />
       <Experience />

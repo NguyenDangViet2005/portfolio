@@ -1,10 +1,14 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ProjectCard from "@/components/sections/project/ProjectCard";
 import ShinyText from "@/components/ShinyText";
 import { projects } from "@/data/projects";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type Segment = {
   text: string;
@@ -49,37 +53,67 @@ function WordsPullUpMultiStyle({
 }
 
 export default function Projects() {
+  const gridRef = useRef<HTMLDivElement | null>(null);
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const projectsInView = useInView(projectsRef, {
     once: true,
     margin: "-100px",
   });
 
+  useEffect(() => {
+    if (!gridRef.current) return;
+    const cards = gridRef.current.children;
+    
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        cards,
+        { opacity: 0, y: 60 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: gridRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }, gridRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="projects" className="relative min-h-screen bg-[#0f0e0c]/60 px-4 sm:px-6 py-10">
+    <section id="projects" className="relative min-h-screen bg-[var(--bg-color)] px-4 sm:px-6 py-20 border-b border-zinc-200 dark:border-zinc-800 transition-colors duration-200">
       <div className="relative mx-auto max-w-[1300px]">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
-          <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold">
-            <ShinyText>Featured Projects</ShinyText>
-          </div>
+          <p className="text-zinc-500 text-xs font-mono uppercase tracking-[0.3em] mb-2">
+            Selected Work
+          </p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-zinc-900 dark:text-white tracking-tight">
+            Featured Projects
+          </h2>
           <div className="mt-4">
             <WordsPullUpMultiStyle
               segments={[
                 {
                   text: "Building scalable systems with modern technologies.",
-                  className: "text-gray-500",
+                  className: "text-zinc-600 dark:text-zinc-400 font-light",
                 },
               ]}
-              className="justify-center text-sm sm:text-base md:text-lg font-normal"
+              className="justify-center text-sm sm:text-base md:text-lg"
             />
           </div>
         </div>
 
         {/* Projects Grid */}
         <div
-          ref={projectsRef}
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6"
+          ref={gridRef}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
           {/* Project Cards */}
           {projects.map((project, index) => (
@@ -92,7 +126,7 @@ export default function Projects() {
               image={project.image}
               demo={project.demo}
               delay={0.1 * (index + 1)}
-              isInView={projectsInView}
+              isInView={true}
             />
           ))}
         </div>
@@ -100,3 +134,4 @@ export default function Projects() {
     </section>
   );
 }
+

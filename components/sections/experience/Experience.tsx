@@ -1,16 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import ShinyText from "@/components/ShinyText";
 import { experiences } from "@/data/experiences";
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative bg-[#0f0e0c]/60 px-4 sm:px-6 py-20 overflow-hidden">
-      {/* Decorative gradient orbs */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-sunset-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-sky-mist/10 rounded-full blur-3xl" />
-
+    <section id="experience" className="relative bg-[var(--bg-color)] px-4 sm:px-6 py-20 border-b border-zinc-200 dark:border-zinc-800 transition-colors duration-300">
       <div className="relative mx-auto max-w-6xl space-y-12">
         {/* Header */}
         <div className="text-center">
@@ -18,7 +13,7 @@ export default function Experience() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-sunset-400 text-xs uppercase tracking-[0.3em]"
+            className="text-zinc-500 text-xs font-mono uppercase tracking-[0.3em]"
           >
             Programs
           </motion.p>
@@ -27,110 +22,108 @@ export default function Experience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-3 text-2xl sm:text-3xl md:text-4xl font-medium leading-12"
+            className="mt-3 text-3xl sm:text-4xl font-semibold text-zinc-900 dark:text-white tracking-tight"
           >
-            <ShinyText>Experience and delivery programs</ShinyText>
+            Experience and delivery programs
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-3 text-gray-400 text-sm sm:text-base max-w-2xl mx-auto"
+            className="mt-3 text-zinc-600 dark:text-zinc-400 text-sm sm:text-base max-w-2xl mx-auto"
           >
             Professional milestones across freelance and academic work with measurable impact.
           </motion.p>
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical left line - dashed */}
-          <div className="absolute left-4 md:left-8 top-0 bottom-0 flex justify-center w-6 -ml-3">
-            <div className="h-full border-l-[1.5px] border-dashed border-[#E1E0CC]/30" />
-          </div>
+        {/* Minimal Timeline Container */}
+        <div className="relative max-w-5xl mx-auto">
+          {/* Vertical Timeline Line */}
+          <div className="absolute left-4 md:left-44 top-2 bottom-2 w-0.5 border-l border-zinc-300 dark:border-zinc-800" />
 
-          <div className="space-y-12 md:space-y-16">
+          <div className="space-y-14">
             {experiences.map((experience, index) => {
               return (
                 <motion.div
                   key={experience.title}
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="relative"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="relative flex flex-col md:flex-row items-start gap-4 md:gap-8"
                 >
-                  {/* Timeline dot with circle border */}
-                  <div className="absolute left-4 md:left-8 top-1.5 flex justify-center w-6 -ml-3 z-10">
-                    <div className="w-[18px] h-[18px] rounded-full border-[1.5px] border-[#E1E0CC] bg-transparent" />
+                  {/* Left Column: Period Timestamp (Plain Text) */}
+                  <div className="ml-10 md:ml-0 md:w-36 md:text-right shrink-0 pt-0.5">
+                    <span className="font-mono text-xs sm:text-sm font-semibold tracking-wider text-zinc-500 dark:text-zinc-400">
+                      {experience.period}
+                    </span>
                   </div>
 
-                  {/* Content */}
-                  <div className="ml-12 md:ml-20">
-                    <div className="space-y-3">
-                      {/* Header */}
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <h3 className="text-xl sm:text-2xl font-semibold text-sunset-400">
-                            {experience.title}
-                          </h3>
-                          {experience.link && (
-                            <a
-                              href={experience.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-sunset-400 hover:text-sunset-300 transition-colors text-sm"
-                            >
-                              ↗
-                            </a>
-                          )}
-                        </div>
+                  {/* Timeline Dot */}
+                  <div className="absolute left-4 md:left-44 top-2 -translate-x-1/2 z-10">
+                    <div className="w-3 h-3 rounded-full bg-zinc-900 dark:bg-white" />
+                  </div>
 
-                        {/* Meta info */}
-                        <div className="flex gap-3 text-xs text-gray-500 flex-wrap">
-                          <span>{experience.period}</span>
-                          {experience.teamSize && (
-                            <span>Team size: {experience.teamSize}</span>
-                          )}
-                        </div>
+                  {/* Right Column: Clean Text Content */}
+                  <div className="ml-10 md:ml-4 flex-1 w-full space-y-3">
+                    {/* Title & Link */}
+                    <div className="flex items-center justify-between gap-4 flex-wrap">
+                      <div>
+                        <h3 className="text-xl font-bold text-zinc-900 dark:text-white tracking-tight">
+                          {experience.title}
+                        </h3>
+                        {experience.teamSize && (
+                          <p className="text-xs font-mono text-zinc-500 mt-0.5">
+                            Team size: {experience.teamSize}
+                          </p>
+                        )}
                       </div>
 
-                      {/* Description */}
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {experience.description}
-                      </p>
-
-                      {/* Responsibilities */}
-                      <div className="space-y-1.5">
-                        {experience.responsibilities.map((item, i) => (
-                          <motion.div
-                            key={item}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 * i }}
-                            className="flex items-start gap-2 text-gray-400 text-sm"
-                          >
-                            <span className="mt-1.5 w-1 h-1 rounded-full bg-sunset-400 flex-shrink-0" />
-                            <span className="flex-1">{item}</span>
-                          </motion.div>
-                        ))}
-                      </div>
-
-                      {/* Tech stack */}
-                      {experience.tech && (
-                        <div className="flex flex-wrap gap-2 pt-2">
-                          {experience.tech.map((tech) => (
-                            <span
-                              key={tech}
-                              className="px-3 py-1 text-xs text-gray-400 border border-sunset-400/20 rounded-full hover:border-sunset-400/40 transition-colors"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
+                      {experience.link && (
+                        <a
+                          href={experience.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs font-mono text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
+                        >
+                          Link ↗
+                        </a>
                       )}
                     </div>
+
+                    {/* Description */}
+                    <p className="text-zinc-700 dark:text-zinc-300 text-sm leading-relaxed">
+                      {experience.description}
+                    </p>
+
+                    {/* Responsibilities List */}
+                    <div className="space-y-1.5 pt-1">
+                      {experience.responsibilities.map((item, i) => (
+                        <motion.div
+                          key={item}
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.04 * i }}
+                          className="flex items-start gap-2 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm"
+                        >
+                          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-zinc-400 dark:bg-zinc-600 flex-shrink-0" />
+                          <span className="flex-1 leading-relaxed">{item}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    {/* Tech Stack List */}
+                    {experience.tech && (
+                      <div className="flex flex-wrap gap-x-4 gap-y-1.5 pt-2 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+                        {experience.tech.map((tech) => (
+                          <span key={tech}>
+                            #{tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               );
@@ -141,3 +134,5 @@ export default function Experience() {
     </section>
   );
 }
+
+

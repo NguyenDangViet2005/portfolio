@@ -1,14 +1,16 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import ThemeToggle from "@/components/ThemeToggle";
+import ContactModal from "@/components/ContactModal";
 
 type Segment = {
   text: string;
   className?: string;
 };
 
-const aboutText = "An enthusiastic web developer.";
+const aboutText = "Building scalable, modern web applications with focus on clean architecture, performance, and intuitive user experiences.";
 
 function WordsPullUpMultiStyle({
   segments,
@@ -48,72 +50,105 @@ function WordsPullUpMultiStyle({
 }
 
 export default function Hero() {
+  const [isContactOpen, setIsContactOpen] = useState(false);
+
   return (
-    <section className="relative h-screen">
-      <div className="relative h-full overflow-hidden">
-        <video
-          className="absolute inset-0 h-full w-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60" />
+    <section className="relative min-h-[90vh] flex flex-col justify-between bg-[var(--bg-color)] border-b border-zinc-200 dark:border-zinc-800 bg-grid-pattern transition-colors duration-300">
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
-        <div className="absolute top-0 left-1/2 -translate-x-1/2">
-          <nav className="hidden md:block bg-black rounded-b-2xl md:rounded-b-3xl px-4 py-2 md:px-8">
-            <ul className="flex items-center gap-3 sm:gap-6 md:gap-12 lg:gap-14 text-[10px] sm:text-xs md:text-sm">
-              {[
-                { label: "About", href: "#about" },
-                { label: "Experience", href: "#experience" },
-                { label: "Skills", href: "#skills" },
-                { label: "Projects", href: "#projects" },
-                { label: "Education", href: "#education" },
-                { label: "The End", href: "#the-end" },
-              ].map((item) => (
-                <li key={item.label}>
-                  <a
-                    href={item.href}
-                    className="text-[rgba(225,224,204,0.8)] hover:text-[#E1E0CC] transition-colors"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
+      {/* Header Navigation & Theme Toggle */}
+      <header className="relative z-10 w-full pt-8 px-6 sm:px-12 flex justify-between items-center max-w-7xl mx-auto">
+        <a href="/" className="font-mono text-sm tracking-widest font-bold text-zinc-900 dark:text-white uppercase">
+          NDV.
+        </a>
 
-        <div className="absolute bottom-0 left-0 right-0 px-4 sm:px-6 md:px-10 pb-6 sm:pb-10">
-          <div className="flex flex-col gap-6">
-            <div className="max-w-6xl">
-              <WordsPullUpMultiStyle
-                segments={[
-                  { text: "Hi there,", className: "font-normal" },
-                  {
-                    text: "I'm  Nguyen Dang Viet.",
-                    className: "font-serif italic text-primary",
-                  },
-                ]}
-                className="text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95] sm:leading-[0.9]"
-              />
-            </div>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 0.5,
-                duration: 0.8,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="text-primary/70 text-xs sm:text-sm md:text-lg leading-[1.6] max-w-3xl"
+        <div className="flex items-center gap-6 sm:gap-10">
+          <nav className="hidden md:flex items-center gap-8 text-xs font-mono tracking-wider uppercase text-zinc-600 dark:text-zinc-400">
+            {[
+              { label: "About", href: "#about" },
+              { label: "Experience", href: "#experience" },
+              { label: "Skills", href: "#skills" },
+              { label: "Projects", href: "#projects" },
+              { label: "Education", href: "#education" },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="hover:text-black dark:hover:text-white transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
+            <button
+              onClick={() => setIsContactOpen(true)}
+              className="hover:text-black dark:hover:text-white transition-colors uppercase font-mono text-xs cursor-pointer"
             >
-              {aboutText}
-            </motion.p>
-          </div>
+              Contact
+            </button>
+          </nav>
+          <ThemeToggle />
         </div>
+      </header>
+
+      {/* Hero Content */}
+      <div className="relative z-10 max-w-6xl w-full mx-auto px-6 py-20 my-auto flex flex-col items-start gap-8">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-zinc-300 dark:border-zinc-800 bg-zinc-100/80 dark:bg-zinc-900/80 text-xs font-mono text-zinc-700 dark:text-zinc-300">
+          <span className="w-2 h-2 rounded-full bg-zinc-900 dark:bg-zinc-100 animate-pulse" />
+          Full-Stack Web Developer
+        </div>
+
+        <div className="max-w-5xl">
+          <WordsPullUpMultiStyle
+            segments={[
+              { text: "Hi there,", className: "font-light text-zinc-500 dark:text-zinc-400" },
+              {
+                text: "I'm Nguyen Dang Viet.",
+                className: "font-bold text-zinc-900 dark:text-white tracking-tight",
+              },
+            ]}
+            className="text-left text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-tight"
+          />
+        </div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.4,
+            duration: 0.8,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+          className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl font-normal"
+        >
+          {aboutText}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          className="flex flex-wrap gap-4 pt-4"
+        >
+          <a
+            href="#projects"
+            className="px-6 py-3 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-black font-medium text-sm hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors shadow-sm"
+          >
+            View Projects
+          </a>
+          <button
+            onClick={() => setIsContactOpen(true)}
+            className="px-6 py-3 rounded-full bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-medium text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
+          >
+            Contact Me
+          </button>
+        </motion.div>
+      </div>
+
+      <div className="relative z-10 w-full pb-8 text-center text-xs text-zinc-400 dark:text-zinc-600 font-mono tracking-widest uppercase">
+        Scroll down to explore ↓
       </div>
     </section>
   );
 }
+
+

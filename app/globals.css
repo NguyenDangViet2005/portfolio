@@ -1,103 +1,45 @@
 @import "tailwindcss";
 
-* {
-  font-family: "Almarai", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg-color: #ffffff;
+  --bg-card: #f4f4f5;
+  --border-color: #e4e4e7;
+  --text-main: #09090b;
+  --text-muted: #71717a;
+  --grid-line: rgba(0, 0, 0, 0.04);
 }
+
+html.dark {
+  --bg-color: #09090b;
+  --bg-card: #141417;
+  --border-color: #27272a;
+  --text-main: #f4f4f5;
+  --text-muted: #a1a1aa;
+  --grid-line: rgba(255, 255, 255, 0.04);
+}
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", "Roboto", sans-serif;
+}
+
 
 body {
-  color: #e1e0cc;
+  color: var(--text-main);
+  background-color: var(--bg-color);
   scroll-behavior: smooth;
   position: relative;
-  background-color: #0c0b09;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.fixed-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('/background.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -2;
-  pointer-events: none;
-  transform: translateZ(0);
+/* Minimalist Grid Background */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
 }
 
-.fixed-bg-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(8px);
-  z-index: -1;
-  pointer-events: none;
-  transform: translateZ(0);
-}
-
-@keyframes orbit-spin {
-  from {
-    transform: rotate(var(--start-angle));
-  }
-  to {
-    transform: rotate(calc(var(--start-angle) + 360deg));
-  }
-}
-
-@keyframes orbit-spin-reverse {
-  from {
-    transform: rotate(var(--start-angle));
-  }
-  to {
-    transform: rotate(calc(var(--start-angle) - 360deg));
-  }
-}
-
-@keyframes counter-spin {
-  from {
-    transform: translate(-50%, -50%) rotate(calc(-1 * var(--start-angle)));
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(calc(-1 * var(--start-angle) - 360deg));
-  }
-}
-
-@keyframes counter-spin-reverse {
-  from {
-    transform: translate(-50%, -50%) rotate(calc(-1 * var(--start-angle)));
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(calc(-1 * var(--start-angle) + 360deg));
-  }
-}
-
-.animate-orbit {
-  animation: orbit-spin var(--orbit-duration, 25s) linear infinite;
-}
-
-.animate-orbit-reverse {
-  animation: orbit-spin-reverse var(--orbit-duration, 25s) linear infinite;
-}
-
-.animate-counter-orbit {
-  animation: counter-spin var(--orbit-duration, 25s) linear infinite;
-}
-
-.animate-counter-orbit-reverse {
-  animation: counter-spin-reverse var(--orbit-duration, 25s) linear infinite;
-}
-
-/* Pause the orbit animations when the container is hovered */
-.orbit-container:hover .animate-orbit,
-.orbit-container:hover .animate-orbit-reverse,
-.orbit-container:hover .animate-counter-orbit,
-.orbit-container:hover .animate-counter-orbit-reverse {
-  animation-play-state: paused;
-}
 
 
