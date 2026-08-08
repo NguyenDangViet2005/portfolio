@@ -1,6 +1,4 @@
 "use client";
-
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ExternalLink, Download, Eye, Mail, Phone, MapPin, Handshake } from "lucide-react";
 import { FiGithub, FiLinkedin, FiFacebook, FiInstagram } from "react-icons/fi";
@@ -11,7 +9,6 @@ interface ContactModalProps {
 }
 
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
-  const [showCvPreview, setShowCvPreview] = useState(false);
 
   return (
     <AnimatePresence>
