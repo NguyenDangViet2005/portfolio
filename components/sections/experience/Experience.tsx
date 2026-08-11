@@ -40,7 +40,7 @@ export default function Experience() {
         {/* Minimal Timeline Container */}
         <div className="relative max-w-5xl mx-auto">
           {/* Vertical Timeline Line */}
-          <div className="absolute left-3.5 sm:left-4 md:left-44 top-2 bottom-2 w-0.5 border-l border-zinc-300 dark:border-zinc-800" />
+          <div className="absolute left-3.5 sm:left-4 md:left-40 top-2 bottom-2 w-0.5 border-l border-zinc-300 dark:border-zinc-800" />
 
           <div className="space-y-10 sm:space-y-14">
             {experiences.map((experience, index) => {
@@ -61,7 +61,7 @@ export default function Experience() {
                   </div>
 
                   {/* Timeline Dot */}
-                  <div className="absolute left-3.5 sm:left-4 md:left-44 top-1.5 sm:top-2 -translate-x-1/2 z-10">
+                  <div className="absolute left-3.5 sm:left-4 md:left-40 top-1.5 sm:top-2 -translate-x-1/2 z-10">
                     <div className="w-3 h-3 rounded-full bg-zinc-900 dark:bg-white ring-4 ring-[var(--bg-color)]" />
                   </div>
 
