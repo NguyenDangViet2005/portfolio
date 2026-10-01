@@ -17,54 +17,26 @@ interface WhatIBringColumnProps {
   sectionInView: boolean;
 }
 
-const themeMap = {
-  amber: {
-    card: "border-amber-500/10 bg-amber-500/[0.01] hover:border-amber-500/30 hover:bg-amber-500/[0.03] hover:shadow-[0_0_15px_rgba(245,124,0,0.06)]",
-    icon: "border-amber-500/20 text-amber-400",
-  },
-  emerald: {
-    card: "border-emerald-500/10 bg-amber-500/[0.01] hover:border-emerald-500/30 hover:bg-emerald-500/[0.03] hover:shadow-[0_0_15px_rgba(16,185,129,0.06)]",
-    icon: "border-emerald-500/20 text-emerald-400",
-  },
-  purple: {
-    card: "border-purple-500/10 bg-amber-500/[0.01] hover:border-purple-500/30 hover:bg-purple-500/[0.03] hover:shadow-[0_0_15px_rgba(168,85,247,0.06)]",
-    icon: "border-purple-500/20 text-purple-400",
-  },
-  cyan: {
-    card: "border-cyan-500/10 bg-amber-500/[0.01] hover:border-cyan-500/30 hover:bg-cyan-500/[0.03] hover:shadow-[0_0_15px_rgba(6,182,212,0.06)]",
-    icon: "border-cyan-500/20 text-cyan-400",
-  },
-} as const;
-
-const rightCards: {
-  title: string;
-  desc: string;
-  icon: React.ReactNode;
-  color: keyof typeof themeMap;
-}[] = [
+const rightCards = [
   {
-    title: "Performance Focused",
-    desc: "Optimize application performance and user experience.",
+    title: "High-Speed Performance",
+    desc: "Optimizing Core Web Vitals, lazy rendering, and asset caching.",
     icon: <Gauge className="w-4 h-4" />,
-    color: "amber",
   },
   {
-    title: "Security Mindset",
-    desc: "Build secure applications and follow best security practices.",
+    title: "Security & Reliability",
+    desc: "Implementing input sanitization, JWT authorization, and CORS safety.",
     icon: <Lock className="w-4 h-4" />,
-    color: "amber",
   },
   {
-    title: "Problem Solver",
-    desc: "Strong analytical thinking and effective problem-solving skills.",
+    title: "Analytical Problem Solver",
+    desc: "Deconstructing complex workflows into elegant, maintainable code.",
     icon: <Puzzle className="w-4 h-4" />,
-    color: "amber",
   },
   {
-    title: "Clean & Maintainable Code",
-    desc: "Write clean, modular, and well-documented code.",
+    title: "Production-Grade Clean Code",
+    desc: "Modular component hierarchy, strict typing, and DRY architecture.",
     icon: <Code2 className="w-4 h-4" />,
-    color: "amber",
   },
 ];
 
@@ -75,12 +47,15 @@ export default function WhatIBringColumn({
     <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between gap-6">
       <div>
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-8 h-8 rounded-full bg-zinc-200 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 flex items-center justify-center text-zinc-900 dark:text-white">
+          <div className="w-8 h-8 rounded-full bg-zinc-200/80 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 flex items-center justify-center text-zinc-900 dark:text-white shadow-sm">
             <Gem className="w-4 h-4" />
           </div>
-          <span className="text-zinc-800 dark:text-zinc-200 font-semibold text-xs tracking-[0.2em] uppercase font-mono">
-            What I Bring
-          </span>
+          <div>
+            <span className="text-zinc-900 dark:text-zinc-100 font-semibold text-xs tracking-[0.2em] uppercase font-mono block">
+              Capabilities // 03
+            </span>
+            <span className="text-zinc-500 text-[11px] font-mono">Value Delivered</span>
+          </div>
         </div>
 
         <div className="space-y-3">
@@ -90,10 +65,10 @@ export default function WhatIBringColumn({
                 key={card.title}
                 initial={{ opacity: 0, x: 20 }}
                 animate={sectionInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.1 * index }}
-                className="flex gap-3 p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 hover:bg-zinc-100 dark:hover:bg-zinc-800/80 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-200 group"
+                transition={{ duration: 0.5, delay: 0.08 * index }}
+                className="flex gap-3.5 p-3 rounded-xl border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/60 dark:bg-zinc-900/40 hover:bg-zinc-100/90 dark:hover:bg-zinc-800/70 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300 group shadow-sm hover:shadow-md"
               >
-                <div className="w-9 h-9 flex-shrink-0 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 flex items-center justify-center group-hover:bg-zinc-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-colors duration-200">
+                <div className="w-9 h-9 flex-shrink-0 rounded-lg border border-zinc-300/80 dark:border-zinc-700/80 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 flex items-center justify-center group-hover:bg-zinc-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-colors duration-300">
                   {card.icon}
                 </div>
                 <div>
@@ -112,12 +87,12 @@ export default function WhatIBringColumn({
 
       {/* Bottom: Let's Connect */}
       <div>
-        <div className="flex items-center gap-3 mb-5 border-t border-zinc-200 dark:border-zinc-800 pt-5">
-          <div className="w-8 h-8 rounded-full bg-zinc-200 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 flex items-center justify-center text-zinc-900 dark:text-white">
+        <div className="flex items-center gap-3 mb-5 border-t border-zinc-200 dark:border-zinc-800/80 pt-5">
+          <div className="w-8 h-8 rounded-full bg-zinc-200/80 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 flex items-center justify-center text-zinc-900 dark:text-white">
             <Handshake className="w-4 h-4" />
           </div>
           <span className="text-zinc-800 dark:text-zinc-200 font-semibold text-xs tracking-[0.2em] uppercase font-mono">
-            Let's Connect
+            Fast Track Channel
           </span>
         </div>
 
@@ -126,17 +101,17 @@ export default function WhatIBringColumn({
           <div className="flex flex-col gap-2.5">
             <a
               href="mailto:vietnguyen.1022005@gmail.com"
-              className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/60 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-600 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-zinc-100 transition-all duration-200 group"
+              className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/70 dark:bg-zinc-900/60 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-600 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-zinc-100 transition-all duration-200 group"
             >
               <FiMail className="w-4 h-4 text-zinc-500 dark:text-zinc-400 group-hover:text-black dark:group-hover:text-white transition-colors" />
-              <span className="truncate">vietnguyen.1022005@gmail.com</span>
+              <span className="truncate font-mono text-xs">vietnguyen.1022005@gmail.com</span>
             </a>
             <a
               href="tel:+84905507622"
-              className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/60 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-600 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-zinc-100 transition-all duration-200 group"
+              className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/70 dark:bg-zinc-900/60 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-600 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-zinc-100 transition-all duration-200 group"
             >
               <FiPhone className="w-4 h-4 text-zinc-500 dark:text-zinc-400 group-hover:text-black dark:group-hover:text-white transition-colors" />
-              <span>(+84) 905 507 622</span>
+              <span className="font-mono text-xs">(+84) 905 507 622</span>
             </a>
           </div>
 
@@ -203,9 +178,8 @@ export default function WhatIBringColumn({
             </div>
           </div>
 
-
           {/* Location info */}
-          <div className="flex items-center gap-1.5 text-[11px] text-zinc-500 pt-2 border-t border-zinc-200 dark:border-zinc-800/60">
+          <div className="flex items-center gap-1.5 text-[11px] text-zinc-500 pt-2 border-t border-zinc-200 dark:border-zinc-800/60 font-mono">
             <FiMapPin className="w-3.5 h-3.5 text-zinc-500" />
             <span>Da Nang City, Viet Nam</span>
           </div>

@@ -34,12 +34,12 @@ export default function ScrollToTop() {
       }}
       transition={{ duration: 0.3 }}
       onClick={scrollToTop}
-      className={`hidden md:flex fixed bottom-8 right-8 z-50 p-3 bg-zinc-900/90 hover:bg-white border border-zinc-700 hover:border-white rounded-full cursor-pointer text-zinc-300 hover:text-black shadow-xl transition-all duration-200 ${
+      className={`hidden md:flex fixed bottom-8 right-8 z-40 p-3 rounded-full cursor-pointer backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:border-zinc-500 dark:hover:border-zinc-500 shadow-xl transition-all duration-200 ${
         isVisible ? "pointer-events-auto" : "pointer-events-none"
       }`}
       aria-label="Scroll to top"
     >
-      <ArrowUp className="h-5 w-5" />
+      <ArrowUp className="h-4 w-4" />
     </motion.button>
   );
 }

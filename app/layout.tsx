@@ -3,7 +3,8 @@ import "./globals.css";
 import StructuredData from "@/components/StructuredData";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
-import GsapCursorSpotlight from "@/components/GsapCursorSpotlight";
+import CinematicCursor from "@/components/CinematicCursor";
+import CinematicOverlay from "@/components/CinematicOverlay";
 import { getSiteConfig } from "@/lib/portfolio-data";
 import { getSiteConfig as getSiteConfigForMetadata } from "@/lib/portfolio-data";
 
@@ -47,7 +48,8 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-[var(--bg-color)] text-[var(--text-main)] selection:bg-zinc-800 selection:text-white dark:selection:bg-zinc-200 dark:selection:text-black overflow-x-hidden transition-colors duration-200">
         <ThemeProvider>
           <SmoothScrollProvider>
-            <GsapCursorSpotlight />
+            <CinematicOverlay />
+            <CinematicCursor />
             {children}
           </SmoothScrollProvider>
         </ThemeProvider>
