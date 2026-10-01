@@ -181,7 +181,7 @@ export default function About() {
         {/* 2. Four Specialization Pillars (Cinematic Hologram Cards) */}
         <div className="space-y-4">
           <div className="flex items-center justify-between text-xs font-mono text-zinc-500 uppercase tracking-widest px-1">
-            <span>// ARCHITECTURAL SPECIALIZATION PILLARS</span>
+            <span>{"// ARCHITECTURAL SPECIALIZATION PILLARS"}</span>
             <span>04 DOMAINS</span>
           </div>
 
@@ -230,7 +230,7 @@ export default function About() {
           {/* Left: 4 Delivery Values (7 cols) */}
           <div className="lg:col-span-7 space-y-4">
             <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest block px-1">
-              // PRODUCTION EXECUTION PRINCIPLES
+              {"// PRODUCTION EXECUTION PRINCIPLES"}
             </span>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
@@ -259,7 +259,7 @@ export default function About() {
           {/* Right: Communications Console (5 cols) */}
           <div className="lg:col-span-5 space-y-4">
             <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest block px-1">
-              // FAST-TRACK COMMUNICATIONS
+              {"// FAST-TRACK COMMUNICATIONS"}
             </span>
 
             <div className="p-6 rounded-3xl border border-zinc-200/90 dark:border-zinc-800/90 bg-zinc-50/70 dark:bg-zinc-900/50 backdrop-blur-sm space-y-5">

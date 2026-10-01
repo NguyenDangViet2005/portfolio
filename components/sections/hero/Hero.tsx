@@ -5,6 +5,7 @@ import { useRef, useState, useEffect } from "react";
 import ThemeToggle from "@/components/ThemeToggle";
 import ContactModal from "@/components/ContactModal";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 type Segment = {
   text: string;
@@ -114,13 +115,13 @@ export default function Hero() {
 
       {/* Header Navigation & Theme Toggle */}
       <header className="relative z-10 w-full pt-4 sm:pt-8 px-4 sm:px-12 flex justify-between items-center max-w-7xl mx-auto">
-        <a 
+        <Link 
           href="/" 
           className="group flex items-center gap-2 font-mono text-sm tracking-widest font-bold text-zinc-900 dark:text-white uppercase"
         >
           <span className="w-2 h-2 rounded-full bg-zinc-900 dark:bg-white group-hover:scale-150 transition-transform duration-300" />
           <span>NDV.</span>
-        </a>
+        </Link>
 
         <div className="flex items-center gap-6 sm:gap-10">
           <nav className="hidden md:flex items-center gap-8 text-xs font-mono tracking-wider uppercase text-zinc-600 dark:text-zinc-400">

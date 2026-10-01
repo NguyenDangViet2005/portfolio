@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import { useState, useRef } from "react";
 
 interface ProjectCardProps {
@@ -78,10 +79,13 @@ export default function ProjectCard({
         className="group relative flex flex-col justify-between w-full h-[460px] sm:h-[500px] md:h-[540px] rounded-3xl overflow-hidden border border-zinc-200/90 dark:border-zinc-800/80 bg-zinc-950 hover:border-zinc-400 dark:hover:border-zinc-500 transition-colors duration-300 shadow-xl hover:shadow-2xl"
       >
         {/* Project Thumbnail Image with Cinematic Contrast */}
-        <img
+        <Image
           src={image}
           alt={name}
-          className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105 filter brightness-[0.88] contrast-[1.05] group-hover:brightness-100 group-hover:contrast-100"
+          fill
+          sizes="(max-width: 640px) 84vw, (max-width: 1024px) 500px, 640px"
+          priority={reelIndex === 1}
+          className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105 filter brightness-[0.88] contrast-[1.05] group-hover:brightness-100 group-hover:contrast-100"
         />
 
         {/* Cinematic Vignette & Gradient Overlays */}

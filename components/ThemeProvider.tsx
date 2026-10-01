@@ -28,11 +28,16 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   };
 
   useEffect(() => {
-    setMounted(true);
     const savedTheme = localStorage.getItem("portfolio-theme") as Theme | null;
     const initialTheme = savedTheme === "light" || savedTheme === "dark" ? savedTheme : "dark";
-    setThemeState(initialTheme);
     applyTheme(initialTheme);
+
+    const frameId = requestAnimationFrame(() => {
+      setMounted(true);
+      setThemeState(initialTheme);
+    });
+
+    return () => cancelAnimationFrame(frameId);
   }, []);
 
   const setTheme = (newTheme: Theme) => {

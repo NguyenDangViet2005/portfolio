@@ -22,15 +22,13 @@ export default function Projects() {
     const track = trackRef.current;
     if (!section || !track) return;
 
-    let st: ScrollTrigger | null = null;
-
     const ctx = gsap.context(() => {
       // Calculate total horizontal scroll distance so the last card easily reaches the center
       const getScrollAmount = () => {
         return track.scrollWidth - window.innerWidth;
       };
 
-      const tween = gsap.to(track, {
+      gsap.to(track, {
         x: () => -getScrollAmount(),
         ease: "none",
         scrollTrigger: {
@@ -51,8 +49,6 @@ export default function Projects() {
           },
         },
       });
-
-      st = tween.scrollTrigger || null;
     }, section);
 
     // Refresh ScrollTrigger after elements settle

@@ -3,7 +3,6 @@ import { cache } from "react";
 import { experiences } from "@/data/experiences";
 import { projects } from "@/data/projects";
 import { stats } from "@/data/stats";
-import { passions, timeline } from "@/data/story";
 
 const rawSiteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
@@ -35,4 +34,3 @@ export const getSiteConfig = cache(() => ({
 export const getProjects = cache(() => projects);
 export const getExperiences = cache(() => experiences);
 export const getStats = cache(() => stats);
-export const getStory = cache(() => ({ timeline, passions }));

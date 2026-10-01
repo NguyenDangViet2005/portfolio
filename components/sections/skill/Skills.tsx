@@ -144,7 +144,7 @@ export default function Skills() {
         {/* 1. Infinite Auto-Scrolling Skills Carousel (No Border, Bold Clean Icons) */}
         <div className="space-y-5">
           <div className="flex items-center justify-between text-xs font-mono text-zinc-500 uppercase tracking-widest px-1">
-            <span>// CONTINUOUS TECH ARSENAL</span>
+            <span>{"// CONTINUOUS TECH ARSENAL"}</span>
             <span className="hidden sm:inline">20+ MODERN TOOLS & PROTOCOLS</span>
           </div>
 
@@ -214,7 +214,7 @@ export default function Skills() {
         {/* 2. Dynamic Production Workflow (Left to Right Horizontal Flow) */}
         <div className="space-y-6 pt-6">
           <div className="flex items-center justify-between text-xs font-mono text-zinc-500 uppercase tracking-widest px-1">
-            <span>// END-TO-END PRODUCTION PIPELINE FLOW</span>
+            <span>{"// END-TO-END PRODUCTION PIPELINE FLOW"}</span>
             <span>STAGE 01 → STAGE 06</span>
           </div>
 
