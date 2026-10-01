@@ -134,8 +134,8 @@ export default function About() {
               <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-3xl p-1 bg-gradient-to-tr from-zinc-300 via-zinc-100 to-zinc-400 dark:from-zinc-700 dark:via-zinc-900 dark:to-zinc-600 shadow-xl shrink-0 group">
                 <div className="relative w-full h-full rounded-[22px] overflow-hidden">
                   <Image
-                    src="/ndv.png"
-                    alt="Nguyen Dang Viet"
+                    src="/ndv.jpg"
+                    alt="Nguyễn Đăng Việt (Nguyen Dang Viet) - Full-Stack Software Engineer"
                     fill
                     sizes="128px"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"

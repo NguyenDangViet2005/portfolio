@@ -40,7 +40,7 @@ export default function AboutColumn({ sectionInView }: AboutColumnProps) {
           <div className="relative w-14 h-14 rounded-full p-0.5 bg-gradient-to-tr from-zinc-400 via-zinc-200 to-zinc-600 dark:from-zinc-700 dark:via-white dark:to-zinc-800 shadow-md">
             <div className="relative w-full h-full rounded-full overflow-hidden">
               <Image
-                src="/ndv.png"
+                src="/ndv.jpg"
                 alt="Nguyễn Đăng Việt"
                 fill
                 sizes="56px"

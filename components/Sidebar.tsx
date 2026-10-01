@@ -76,7 +76,7 @@ export default function Sidebar() {
       <div className="p-6">
         <div className="flex items-center gap-4 mb-10">
           <div className="h-12 w-12 rounded-full border border-zinc-800 overflow-hidden items-center justify-center">
-            <Image src="/ndv.png" width={70} height={70} alt="author" />
+            <Image src="/ndv.jpg" width={70} height={70} alt="Nguyễn Đăng Việt" />
           </div>
           <div>
             <h2 className="font-semibold text-zinc-100">Nguyễn Đăng Việt</h2>

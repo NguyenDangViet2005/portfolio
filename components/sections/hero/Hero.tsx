@@ -178,7 +178,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Hero Headline */}
-        <div className="max-w-5xl">
+        <h1 className="max-w-5xl m-0 font-normal">
           <WordsPullUpMultiStyle
             segments={[
               { text: "Hi there,", className: "font-light text-zinc-500 dark:text-zinc-400" },
@@ -189,7 +189,10 @@ export default function Hero() {
             ]}
             className="text-left text-3xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[1.2] sm:leading-[1.18] md:leading-[1.16]"
           />
-        </div>
+          <span className="sr-only">
+            Nguyễn Đăng Việt (Nguyen Dang Viet) - Full-Stack Software Engineer Portfolio
+          </span>
+        </h1>
 
         {/* Hero Subtitle */}
         <motion.p
